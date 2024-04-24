@@ -1,0 +1,44 @@
+GRAPHS
+
+Most intuitive way of making a graph is making a list/array of edges (edge list/adjacency list)
+
+List of lists, showing what each node is connected to
+  Arrays for each vertex
+  Linked lists
+  Trees
+  Your most frequent operation should guide your choice of data structure:
+    How often do we change the graph? (insert/delete)
+    How often are we querying edges?
+    Arrays or self-balancing BSTs could be better depending on the above two conditions
+Can do an adjacency matrix, a table of true and false values to show whether two nodes are connected (only works for undirected graphs)
+For weighted, we can store numbers instead of true. To not mix numbers, can use zero/infinity instead of false (depending on what you’re going for)
+
+If use matrix: 
+  It is Theta(n^2) memory (a lot!)
+  Fast lookup and checks of presence of edges of O(1)
+  Slow to iterate over all edges
+  Slow to add/delete a node, O(n^2)
+  Fast to add new edge, O(1)
+
+If adjacency list: 
+  Memory usage depends on # of edges, not nodes 
+  Helps when graph is sparse (not many edges)
+  Slow lookup and checks for presence of edges, O(k) (where k is # of neighbor nodes)
+  Faster to iterate over all edges
+  Also fast to add/delete a node
+  Add new edge O(1)
+
+Use adjacency lists for sparse graphs or need fast lookup for neighbors of a vertex
+Most real life situations will generate sparse graphs
+Use adjacency matrices when expecting dense graph or need fast lookup for edges
+If density (edges/nodes^2) is over 1/64, use adjacency matrix
+
+BFS/DFS: 
+  BFS:
+    Visit starting node. Mark it as visited. 
+    Discover all neighbors of node, add them to queue to visit next
+    While queue is not empty, dequeue next element, add to visited, and repeat step 2
+  DFS:
+    Visit starting node, mark as visited
+    Discover all neighbors, add to STACK
+    Pop from stack, add what you popped to visited, repeat step 2
