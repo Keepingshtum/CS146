@@ -11,33 +11,42 @@ Every subfolder you see is one potential area to earn extra credit.
 
 1. #### Homework
     a. Java Solution
-    b. Python Solution 
+   
+    b. Python Solution
+   
     c. Pseudocode
+   
     d. Plain English Approach (This should match the Java/Python solutions)
 
-2. #### Labs
+3. #### Labs
     a. Java Solution
-    b. Python Solution 
+   
+    b. Python Solution
+   
     c. Pseudocode
+   
     d. Plain English Approach (This should match the Java/Python solutions)
 
-3. #### Extra Credit
+5. #### Extra Credit
     a. Java Solution
-    b. Python Solution 
+   
+    b. Python Solution
+   
     c. Pseudocode
+   
     d. Plain English Approach (This should match the Java/Python solutions)
 
     Obviously, each extra credit problem may not need all of these, since some asked for a plain text submission. Exercise your judgement, you are all smart enough to understand what is needed for each problem!
 
-4. #### Notes
+7. #### Notes
 
     If you have maintained notes that are legible and actually helpful for people besides yourself, you may want to submit them here. Text/ Markdown works best, since making modifications/corrections is easier, but PDFs work too, if that's what you have. 
 
-5. #### Issues
+8. #### Issues
 
     See some code that will never execute? Some statements that are flat out wrong? Create an issue! If it's a valid concern, I will approve it. Ideally, if you saw the issue, you should also propose a fix. If you're too lazy to that, someone else can always fix it for extra credit. Make sure you follow the [Issue Guidelines](issues.md)
 
-6. #### Enhancements
+9. #### Enhancements
 
     Really wish there was an extra subfolder for something? Think there's a better way to do things? Create an issue! More details under [Issue Guidelines](issues.md).
 
