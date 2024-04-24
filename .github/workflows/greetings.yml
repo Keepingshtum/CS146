@@ -1,0 +1,16 @@
+name: Greetings
+
+on: [pull_request_target, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: "Good job on posting your first issue/enhancement! Make sure your PR title follows the conventions under ISSUES.md or it might not get extra credit!"
+        pr-message: "Good job on posting your first contribution! Make sure your PR title follows the conventions under CONTRIBUTING.md or it might not get extra credit!"
