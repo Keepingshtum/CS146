@@ -1,0 +1,2 @@
+To solve this problem, you need to pay close attention to the definition of an anagram. The constraints of an anagram are that the two words must be the same length in characters, and to be able to spell eachother, they need to contain the same exact letters. The position of the letters does not matter, obviously. Using the sort function in Python and sorting in Java, you can sort the two strings alphabetically and then compare the two, and with the comparison, return whether or not the alphabetized sorting of the word matches the other string.
+
