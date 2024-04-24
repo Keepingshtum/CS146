@@ -2,5 +2,5 @@ Given the root of a binary tree, return the level order traversal of its nodes' 
 
 Constraints:
 
-The number of nodes in the tree is in the range [0, 2000].
--1000 <= TreeNode value <= 1000
+* The number of nodes in the tree is in the range [0, 2000].
+* -1000 <= TreeNode value <= 1000
