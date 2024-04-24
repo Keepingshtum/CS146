@@ -1,0 +1,32 @@
+MST'S:
+Minimum Spanning Tree (MST):
+  In a weighted tree, cheapest way to visit all nodes
+  Heaviest edge is always excluded?
+  Count of edges in MST = nodes - 1
+  If all weights are unique, there is only one solution
+  Three algorithms to make a BST:
+  Prim’s, Kruskal’s, Boruvka’s
+
+Prim’s Algorithm
+  Pick a random vertex to start, add to visited list
+  From visited nodes, pick the edge with minimum weight, and visit its destination
+  For multiple valid choices, tiebreak randomly
+  If minimum weight edge connects two visited nodes, ignore it (we already have a path)
+  Actually pretty long implementation
+  Use heaps and lists
+  O(V^2) for adj. matrix
+  O(VlogV + ELogV) for adj. lists 
+
+Kruskal’s Algorithm
+  Pick minimum weight edge, add it to MST solution (do not look at vertices)
+  If picking an edge wouldn’t add a new vertice to our subgraph, ignore it
+  Go until you have had all nodes added
+  Use a disjoint set (a list of disjoint sets)
+    Disjoint sets are two sets with no common values
+    Uses union-find
+  O(ElogE)
+
+MST Applications:
+  Constructing trees for broadcasting in computer networks
+  Curvilinear feature extraction in computer vision
+  Cluster analysis (clustering points in k means, social network analysis, clustering gene expression data)

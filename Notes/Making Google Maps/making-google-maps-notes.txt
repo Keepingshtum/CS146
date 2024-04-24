@@ -1,0 +1,40 @@
+SINGLE SOURCE SHORTEST PATH
+
+How to find algorithm that determines shortest (least cost) path? 
+BFS works good, we know that it will be the shortest path
+Can also use topological sort, but only works on DAGs
+If you have a weighted graph, can use a heap instead of a queue for BFS
+DFS will take longer to complete than BFS when there are cycles
+Single shortest path: shortest path from a particular node to all other nodes
+
+Dijkstras:
+  Start at start node, and visit it
+  Pick shortest (least cost) path/edge that leads to an unvisited node (use visited list that is a hashmap with cost to visit that node as the value)
+  Remember to take distance from source, not just local distance
+  Also check edges to see if you’re finding cheaper paths to already visited nodes (ie check edges from current node to visited nodes and see total price to that visited node through current path)
+
+Notes: 
+  Doing updates is unnecessary work
+  Can make better choices by comparing edges in terms of weight + shortest distance to get to that edge instead of just weight
+  Dijkstras will fail if there is a negative cycle
+  Theta(V^2) for array implementations, O(E + VlogV) for a fibonacci heap (this is fastest single source shortest path algorithm known for arbitrary digraphs with unbounded, non-negative edges)
+  Space complexity is O(V) in both cases 
+
+Bellman-Ford:
+  Don’t need to know in detail
+  Longest path in graph is V-1 length
+  So, if see a path length of V or more, you know you have a cycle
+  Just look through our graph V-1 times and update shortest path that many times
+
+A*: 
+  General case of Dijkstra’s
+  Instead of just looking at edge weights, add heuristic function value to each edge weight
+  Basically: 
+    Calculate/approximate heuristic
+    Do Dijkstras with heuristics acting as functions on weights
+The heuristic could be:
+  Euclidian Distance
+  Manhattan Distance
+  Arbitrary coinflip
+  Traffic on a road!
+Very expensive to compute and store, so often approximated

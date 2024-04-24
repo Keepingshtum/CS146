@@ -1,0 +1,72 @@
+BST PROBLEMS
+
+Height of tree isn’t actual height, but longest number of edges to get to root to lowest node. 
+  Skewed tree of 5 nodes will be 4 height/depth since 4 edges
+How can prevent skewed BSTs? Rebalancing/rotations!
+
+Rebalance a skewed BST
+  Fast and slow pointer (2 pointers, one goes 2 at a time, other goes 1 at a time. When the first one gets to the end, the second will have been at the middle)
+  Once we found middle, we put that as root, split before and after it into 2 subtrees and do the same for each subtree and so on
+
+Rotate a BST:
+  Rotating left and right are inverses of each other
+  Can rotate a skewed BST to fix it (but figuring out where to rotate from can be challenging)
+
+Balanced BST definition:
+  Height = order of logn for balanced trees of n nodes
+  This will give Theta(logn) operations since operations often based on height
+
+Red-Black Trees: 
+  If we have a balanced BST, we don’t have to worry about O(n) worst case operations
+  If we make a self-balancing BST, we can always have O(log n) operations
+  RB Trees are one of 3 main types of self-balancing BST’s
+  RB Trees have following 5 properties: 
+    1. Every node is either red or black
+    2. Root is black
+    3. All NIL nodes are considered black
+    4. A red node does not have a red child
+    5. Every path from a given node to any of its descendant NIL nodes goes through the same number of black nodes
+    (on top of normal BST properties like how left subchild is less than root and right subchild is greater)
+
+NIL nodes don’t have to be shown (but still exist)
+Can still do traversal, insertion, deletion on an RB tree
+Insertion/deletion is harder because it tends to violate the properties
+
+Insertion/deletion overview: 
+  1. Do BST insert/delete
+  2. Fix RB tree properties (by recoloring and rotations)
+Always insert a red node
+
+RB Tree applications: 
+  Completely Fair Scheduler - process scheduler for Linux Kernel
+  Handling hash collisions 
+  Speeding up other algorithms
+  Biggest advantage is O(log n) worst case time complexity for all operations
+B trees and AVL trees are other self-balancing trees (AVL trees are based on rotations)
+
+Graphs: 
+  A tree is a type of graph
+
+  Anatomy:
+    Have nodes/vertices
+    Connections are called edges
+    Undirected vs directed (arrows on edges)
+    Directed:
+      Put 2 directed edges between each node
+    Edge can be part of a path between 2 nodes
+    Cycle is a path back to source vertex
+    A simple path has no other cycles
+    An acyclic graph contains no cycles
+    A digraph is when cyclic
+    A directed acyclic graph is called a DAG (guess what DAG stands for)
+
+  Number of outbound edges (edges pointing out of a node) for a given vertex is called its outdegree
+  Number of inbound edges (edges pointing towards a node) for a given vertex would be the indegree
+  Make some edges more important than others by assigning weights (edge between 1 and 2 could have weight of 1, edge between 1 and 3 could have weight of 0.5)
+  
+  Graphs have many applications, including: 
+    Pagerank
+    Google Maps
+    Facebook/Social Media
+    Netflix Recommendations
+    Amazon Delivery Routing
