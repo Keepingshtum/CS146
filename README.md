@@ -48,7 +48,11 @@ Every subfolder you see is one potential area to earn extra credit.
 
     See some code that will never execute? Some statements that are flat out wrong? Create an issue! If it's a valid concern, I will approve it. Ideally, if you saw the issue, you should also propose a fix. If you're too lazy to that, someone else can always fix it for extra credit. Make sure you follow the [Issue Guidelines](ISSUES.md).
 
-9. #### Enhancements
+   If you just propose an approved issue, you get one count of extra credit. The issue is then open to the public, whoever opens a PR to fix that issue (and gets approved) first, gets a count of extra credit.
+   If you propose a fix that gets approved in the issue, you will get two counts of extra credit.
+   
+
+10. #### Enhancements
 
     Really wish there was an extra subfolder for something? Think there's a better way to do things? Create an issue! More details under [Issue Guidelines](ISSUES.md).
 
