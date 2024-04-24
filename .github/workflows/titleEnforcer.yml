@@ -10,7 +10,7 @@ jobs:
 
     steps:
     - name: Check Pull Request Title
-      uses: actions/github-script@v5
+      uses: actions/checkout@master
       with:
         script: |
           const titleRegex = /^\[(HW|EC|LABS|NOTES)\].+?\[(.+?)\]$/gm;
