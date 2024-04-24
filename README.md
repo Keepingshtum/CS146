@@ -6,6 +6,8 @@ You want to contribute *meaningfully* to this repository to earn extra credit. E
 
 Ensure that your contibutions follow the [Contribution Guidelines](CONTRIBUTING.md). If they don't, I won't merge your pull requests, and someone else might be able to steal all your hard work!
 
+Remember, once someone merges code/ notes/ etc. to the repo, it's not a guarantee it's perfect. You can always raise new PRs which improve on what's on the Repo already, or raise issues which point out flaws/ areas of improvement.
+
 ### What counts for extra credit
 Every subfolder you see is one potential area to earn extra credit. 
 
