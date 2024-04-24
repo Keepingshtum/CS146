@@ -1,17 +1,20 @@
 Recurrence Relations
+
 Divide and conquer: 
 Classic approach to solve algorithmic problems: 
-1. Divide problem into one or more subproblems that are smaller instances of same problems
-2. Conquer subproblems by solving them (usually recursively)
-3. Combine subproblem solutions to form solution to original problem
-Ex: Mergesort, quicksort
-Assume time complexity for someFunc is T(N)
+		1. Divide problem into one or more subproblems that are smaller instances of same problems
+		2. Conquer subproblems by solving them (usually recursively)
+		3. Combine subproblem solutions to form solution to original problem
+	Ex: Mergesort, quicksort
+	Assume time complexity for someFunc is T(N)
+
 T(N) void someFunc(int n){
 c1	if( n > 0) {
 c2		System.out.println(“n”);
 T(N-1)		someFunc(n - 1);
 	}
 }
+
 Lets assume c1 + c2 = 1. 
 If T(N) = T(N - 1) + 1, then we can write:
 T(N) { 1 if n = 0, T(N - 1) + 1 if n > 0 } (remember that the 1 is just c1 + c2)
@@ -31,8 +34,8 @@ N + 1		for(int i = 0; i < 2; i++){
 N			Sout(“n”);
 		}
 T(N - 1)	SomeFuncToo(n - 1);
-
 	} }
+ 
 So, T(N) = 2N + 2 + T(N - 1). Since 2N + 2 is a pain, we can just replace it with N since it is the same order of growth, giving us T(N) = T(N - 1) + N. 
 So again, T(N) { if n = 0, equals 1, if n > 0, equals T(N - 1) + N }
 Solve it: T(N) = T(N - 1) + N
@@ -47,16 +50,16 @@ T = summation of i = 1 to N, so = N(N + 1) / 2 ( + 1)
 So, someFuncToo has order of growth for f(n) = N+(N-1)+(N-2)+...+1
 1+ N(N + 1) / 2 = (n^2 + n) / 2 (+ 1) has an order of growth of n^2, so we do O(n^2) for this function
 
+
 Master thm for ‘decreasing’ functions: 
-For recurrence relation T(N) = aT(N - b) + f(n), where a, b > 0, f(n) = O(N^k) and k > 0, and:
-1. If a < 1, then T(n) = O(n^k) or O(f(n))
-2. If a = 1, then T(n) = O(n^(k+1)) or O(n * f(n))
-3. If a > 1, then T(n) = O(n^k * a^(n/b))
+	For recurrence relation T(N) = aT(N - b) + f(n), where a, b > 0, f(n) = O(N^k) and k > 0, and:
+		1. If a < 1, then T(n) = O(n^k) or O(f(n))
+		2. If a = 1, then T(n) = O(n^(k+1)) or O(n * f(n))
+		3. If a > 1, then T(n) = O(n^k * a^(n/b))
 
 Master thm for divide and conquer algorithms: 
-For T(N) = aT(N/b) + f(n)
-Where a >= 1, b > 1, and
-1. f(n) = O(n^(logb(a) - e)) where e > 0, then T(n) = Theta(n^(logb(a))
-2. f(n) = O(n^(logb(a) - e) * log^k(n)), where k >= 0, then T(n) = O(n^(logb(a) * log^(k + 1) * n)
-3. f(n) = Omega(n^(logb(a) + e))) where e > 0, then T(n) = Theta(f(n))
-Addl condition for case 3: a * f(n/b) <= c*f(n), c > 1, n > n0
+	For T(N) = aT(N/b) + f(n) where a >= 1, b > 1, and
+		1. f(n) = O(n^(logb(a) - e)) where e > 0, then T(n) = Theta(n^(logb(a))
+		2. f(n) = O(n^(logb(a) - e) * log^k(n)), where k >= 0, then T(n) = O(n^(logb(a) * log^(k + 1) * n)
+		3. f(n) = Omega(n^(logb(a) + e))) where e > 0, then T(n) = Theta(f(n))
+	Addl condition for case 3: a * f(n/b) <= c*f(n), c > 1, n > n0
