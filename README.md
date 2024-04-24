@@ -8,6 +8,8 @@ Ensure that your contibutions follow the [Contribution Guidelines](CONTRIBUTING.
 
 Remember, once someone merges code/ notes/ etc. to the repo, it's not a guarantee it's perfect. You can always raise new PRs which improve on what's on the Repo already, or raise issues which point out flaws/ areas of improvement.
 
+Also remember to check this Readme/ other docs frequently, as things might change!
+
 ### What counts for extra credit
 Every subfolder you see is one potential area to earn extra credit. 
 
