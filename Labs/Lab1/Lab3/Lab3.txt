@@ -1,0 +1,58 @@
+Problem #1:
+
+Let's compare some basic math functions to refresh our memory. For each of the following, just write which 
+function is asymptotically greater (So, you should be thinking about your asymptotic notations!). Show your 
+reasoning for the same.
+
+1. 100000000000n^2 vs n^3
+ Simply due to the fact that it is n^3 it will grow constantly faster than n^2 mutlipled by any number 
+ no matter how big it is as in this senrio it is 100,000,000,000 which still is the same as 1, when comparing 
+ and looking Big 0 notation time complexity. 
+
+2. n^2 log(n) vs (log(n))^10
+n^2 log(n) is the one thst will be asymptotically greater, due to the fact that it is quadratic where as
+(log(n))^10 is linear which causes it to grow slower when compared to quadratic growth. We also just look 
+at the biggest term within each function given due to the fact that the rest is irrevlant when calulating 
+time complexity. 
+
+
+3. n^(log(n)) vs 2^(√n)
+ n^(log(n)) is the one that is larger. This is due to it increasing with n within the the log(n) whereas the other 
+ function of 2^(√n) is a fixed polynomial so the growth it experiences is much slower. We can also look at the growth 
+ rates of the exponetents, even despite the fact that log(n) will grow slower than √n, when looking at the to which base 
+ they are set to 2 vs n. n will grow more since 2 as a base is just fixed and doesn't change at all. This can also verifed by 
+ graphing each function in which once again it will show that n^(log(n)) growing faster than its counterpart.
+
+
+
+4. 2^n vs 2^(2n)
+ 2^(2n), even thought they have the same 2^(2n) has an exponent that is twice as large than 2^n, for any value of n. 
+ This turns out to mean that no matter what 2^(2n) will always be asymptotically greater.  
+ 
+
+
+
+
+
+Problem #2;
+
+isPrime(n): 
+  for(i = 2, i*i <= n; i++) {
+    if(n % i == 0) {
+      return false
+    }
+  return true
+  }
+
+Best Case: O(1) - When n is an even number greater than 2, as the very first check (n % 2 == 0) will immediately return false. 
+In this case, the loop runs only once regardless of the size of n. Therefore the best case senario ends up being O(1)
+
+Worst Case:O(√N) - We get the worst case senrio when n is a prime number. The function then must check all numbers from 2 all the up to 
+(√N) since the loop is running while (i*i<=n is equal to i<=√N). This is due to the fact that n has a greater factor than its square root. 
+It must also have a factor that is less than its square root, if we had found that smaller factor earlier, the loop would have ended. And due 
+to the funtion checking all the way u to √N, its worst case ends up being O(√N).
+
+Average Case:O(√N) - For the average case we consider a sitation inbetween the best and worst case, since Big O notation requires us to scale
+extremely large values if the value was around √N/2, we would just disreguard the constant coefficients given and just focus on the largest coefficient.
+Which would be the main impacting cause for finding Big O notation. Leaving it to be O(√N) for the average case senario just like it is for 
+for the worst case. 
