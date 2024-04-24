@@ -4,6 +4,8 @@ When making issues, you are trying to bring attention to problems with content t
 
 You need to follow the exact same naming convention for your issue titles, as your pull requests:
 
+{ASSIGNMENT CATEGORY}{ASSIGNMENT NAME+NUMBER} - {DESCRIPTIVE TITLE} - {YOUR NAME}
+
 So, if you're submitting an issue with the Java Implementation for HW1, your pull request title should look like:
 
 [HW][HW1] - Java Bruteforce Solution Will Not Compile - [Anant Shukla]
