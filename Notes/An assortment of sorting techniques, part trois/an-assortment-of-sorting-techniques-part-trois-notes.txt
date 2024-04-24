@@ -1,0 +1,60 @@
+Sorting algos we’ve looked at and their lower bounds:
+  Insertion O(n^2)
+  Merge O(nlogn)
+  Quick O(nlogn)
+  Heap O(nlogn)
+
+They r all multiplied by n, since they do comparisons, so they are comparison-based.
+We can represent how these algos work on outputs of size 3 using decision trees. 
+
+Merge sort: 
+The thing to notice is that there are 6 leaf nodes for sorting 3 numbers. This is true for all decision trees for comparison based sorting algos. 
+3! = 6 permutations for 3 elements. Ie, we need at LEAST 3 comparisons
+
+  Generalizing to n elements, we get the condition: 
+    n! Permutations fit in a tree with 2^h possible nodes
+    n! must be less than 2^h
+    So, h >= omega(nlogn)
+    This means that there are no possible comparison based sorting algorithms that can be faster than nlogn (in worst case). 
+
+Counting sort: 
+  Step 1: Count the elements (occurrences)
+  Find how many unique elements, and assign a counter for them (prob with hashmap)
+  Make the counts cumulative (so if there are 2 1’s and 4 2’s, make 2’s 6 instead since 2 1’s. Then if there are 2 3’s, you make the 3 counter 2 + 6 since 6 from the 2 and 2 from the 3’s, for a total of 8). 
+  Traverse array reverse order, putting references in order by referencing count table (to make it stable), decrementing count by 1 before after inserting element
+  Now counter acts as indices for first occurring index of each element
+  Time complexity is Theta(2n+k) = Theta(n+k) where k is the number of unique elements (one array traversal, k counting and cumulating, another array traversal). 
+  Space complexity is Theta(2n+k) = Theta(n+k) since you need 2 arrays and the map
+  We don’t use counting sort very often because it takes up too much space and isn’t too good if you have many unique numbers
+  You could have 1 gb of numbers, k = 100n, and then you’d need 100gb of space to sort just 1 gb of data.
+
+Radix and Bucket Sort (also in linear time)
+  Radix was used to sort punch cards
+  Bucket sort is modified counting sort
+  Both suffer from similar issues like taking up extra space and suited for special case inputs (small input, uniform distributions)
+
+Hashing: 
+  Hashing is useful technique
+  Used to encrypt the german enigma machines
+  Cloudflare uses a wall of lava lamps to generate random hashes
+  Hashing is converting data into fixed-length output
+  Basic example is Modulo functions such as num % k
+  If you want 100 keys you can have k = 100. 
+  An ideal hash function should be:
+    Efficiently computable 
+    Uniformly distribute keys (each table position equally likely for each key)
+    Minimize collisions
+  Collisions clutter hashmaps
+  
+Dealing with hash collisions can be done in a few ways: 
+    Linear probing
+      Traverse linearly, put element in next empty space
+    Quadratic probing
+      Instead of stepping one at a time, increase step value quadratically (instead of 1*1, step 2*2, then 3*3, etc)
+    Separate chaining
+      Using additional data structures to allow for multiple values at the same index
+    Double hashing
+      Using second hash function to decrease collision chances
+  
+Hashmaps are very efficient
+      Insert, delete, referencing from hashmap is Theta(1)
