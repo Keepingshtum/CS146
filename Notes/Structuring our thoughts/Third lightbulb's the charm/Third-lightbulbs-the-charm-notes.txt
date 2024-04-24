@@ -1,0 +1,62 @@
+3 notations to model growth of functions:
+Big-Oh: O()
+  Represents upper bound of algorithm running time
+  The function f(n) = O(g(n)) if:
+    There exists constants c and n0 such that: 
+      f(n) <= c * g(n)
+      For all n, n > n0 
+  Usually think about n >= 1 since we don’t worry about empty or negative sized arrays
+  For f(n) = 10n + 100
+  Can find a c * g(n) combo that is >= f(n) for n >= 1?
+  Yeah, for example, 110n, greater than 10n + 100 for n >= 1 (so c = 110, g(n) = n)
+  Fast way to do this is to take summation of highest degree terms by looking at f(n)
+  For 4n + 7, you can just do 4n + 7n = 11n
+  Since this exists, 4n + 7 = O(n)
+  Why can’t we say for 10n+100, wouldn’t 110n^2 work?
+  Yeah, it would work. You can tune up the powers all you like. But you’d like it to be closer than not. You’re attempting to approximate
+
+Big-Omega: Ω()
+  Represents lower bound of algorithm’s running time
+  The function f(n) = Ω(g(n)) if
+    There exists constants c and n0 such that:
+      c * g(n) <= f(n)
+      For all n > n0
+  Take f(n) = 10n + 100 again.
+  Think of c * g(n) combo that is less than or equal to f(n) for n >= 1
+  You can do n <= 10n, or even 10n + 100 since that’s exactly equal to
+  So 10n + 100=  Ω(n)
+  Technically you can also make Ω(n) = root(n) or log n or 1 for this example but you want to approximate it so these aren’t that helpful
+
+Theta: Θ()
+  Represents both upper and lower bounds of algorithms running time
+  Formal definition:
+    The function f(n) = Θ(g(n)) if
+      There exists constants c1 and c2 and n0 such that
+        c1 * g(n) <= f(n) <= c2 * g(n)
+          For all n >= n0
+  f(n) = 10n + 100
+    Use past solns, upper bound 110n, lower bound n
+    So 10n + 100 = Θ(n)
+  Can we say 10n + 100 = Θ(n^2) or 10n + 100 = Θ(log n)?
+  No. 
+
+Practice: 
+Ex 1: f(n) = n^2 + 2n + 1, (n0 = 1)
+n^2 + 2n + 1 <= n^2 + 2n^2 + n^2 - > f(n) = O(n^2)
+n^2 + 2n + 1 >= n^2 -> f(n) = Ω(n^2) (n works too, n^2 is just closest)
+n^2 + 2n + 1 = Θ(n^2) since O(n^2) and Ω(n^2)
+
+Ex 2: f(n) = n^2log(n) + 2n (n0 = 1)
+f(n) = O(n^2logn)
+f(n) = Ω(n^2logn)
+f(n) = Θ(n^2logn)
+
+Ex 3: f(n) = n! (n0 = 1)
+O(n^n), expand function and take highest order. Instead of n(n-1)(n-2)(etc) do n(n)(n)(n)
+Ω(1), expand function and take lowest order
+Θ() doesn’t exist cause something about g(n) i give up dude
+
+Best, worst, and average case: 
+For linear search, the best case is 1 no matter what. Even if array is huge, best case is 1.
+However, for worst case, it changes based on array size. Can use upper/lower bounds with best/worst case. 
+For average, compute all possible stuff. 
