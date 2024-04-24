@@ -44,7 +44,7 @@ Every subfolder you see is one potential area to earn extra credit.
 
 8. #### Issues
 
-    See some code that will never execute? Some statements that are flat out wrong? Create an issue! If it's a valid concern, I will approve it. Ideally, if you saw the issue, you should also propose a fix. If you're too lazy to that, someone else can always fix it for extra credit. Make sure you follow the [Issue Guidelines](issues.md)
+    See some code that will never execute? Some statements that are flat out wrong? Create an issue! If it's a valid concern, I will approve it. Ideally, if you saw the issue, you should also propose a fix. If you're too lazy to that, someone else can always fix it for extra credit. Make sure you follow the [Issue Guidelines](issues.md).
 
 9. #### Enhancements
 
