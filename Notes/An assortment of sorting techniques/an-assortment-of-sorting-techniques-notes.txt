@@ -1,20 +1,20 @@
- Sorting (Mergesort, Quicksort)
+Sorting (Mergesort, Quicksort)
+
 Mergesort splits the array until it is in groups of 2
 Sorts groups of 2, then merges them into 4, then etc. 
 What if there are an odd number of elements?
-Left half gets extra element (arbitrary, but a convention)
+	Left half gets extra element (arbitrary, but a convention)
 How does the merge operation even work?
-Merge elements from two arrays, such that we end up with an array that is sorted
-Visual ex: 
+	Merge elements from two arrays, such that we end up with an array that is sorted
+	Visual ex: 
 [1, 2, 3] and [4, 5]
 1 > 4, so place 1 in first
 2 > 4, so place 2 in second
 3 > 4, so place 3 in third
 No elements left to compare, fill remaining elements
-Example is a little special, since the arrays were already sorted, which simplifies merge operation
+	Example is a little special, since the arrays were already sorted, which simplifies merge operation
 
-
-
+Pseudocode:
 Merge(array a, array b, size m, size n)
 i,j,k = 0
 array c = []
@@ -25,21 +25,21 @@ while (i <= m && j <= n) (while arrays still have sortable elements) {
 And then 2 more while loops to fill remaining elements once one array is empty
 
 Time complexity:
-Merge is theta(nlogn) best average worst
-The recurrence relation (recursive part) is log(n) since you’re splitting it in half a bunch of times
-You’re doing an n thing for every log(n), so prob n * log(n) = theta(nlog(n))
+	Merge is theta(nlogn) best average worst
+	The recurrence relation (recursive part) is log(n) since you’re splitting it in half a bunch of times
+	You’re doing an n thing for every log(n), so prob n * log(n) = theta(nlog(n))
 
 How much space does this algorithm use? 
 Space complexity: 
-m + n elements worth, which translates to theta(n)
+	m + n elements worth, which translates to theta(n)
 Mergesort optimizations: 
-Check if array is sorted before starting dividing/merging
-Reduces time complexity for best case from nlog(n) to n (but is a little less optimized for non best case, but not by much)
-Linear search is theta(n)
-Iterative flavor of mergesort: 
-Was preferred when recursion was not as efficient
-Mergesort is stable
-Equivalent elements retain relative positions after sorting
+	Check if array is sorted before starting dividing/merging
+		Reduces time complexity for best case from nlog(n) to n (but is a little less optimized for non best case, but not by much)
+		Linear search is theta(n)
+	Iterative flavor of mergesort: 
+		Was preferred when recursion was not as efficient
+Mergesort is stable:
+	Equivalent elements retain relative positions after sorting
 
 
 Quicksort 
@@ -68,11 +68,11 @@ End of traversal, swap pivot to correct position. Return index of pivot so we ca
 If we pick largest element as a pivot, it will be bad. Theta(n^2) worst case
 Also if lots of duplicates in array, it will get bogged down for no reason, esp if it’s unstable
 Fixes:
-Pick middle element as pivot (Hoare’s partition)
-Goes from Theta(n/2) to Theta(n/6) partitions
-Pick a random pivot instead of an arbitrary one
-Run insertion sort on small subproblems
-Worst case will still be Theta(n^2) time
-Can implement stable quicksort, but takes space from Theta(n) to O(nlogn) space (worse than mergesort)
-But average case space complexity is better than mergesort (log n versus n)
+	Pick middle element as pivot (Hoare’s partition)
+		Goes from Theta(n/2) to Theta(n/6) partitions
+	Pick a random pivot instead of an arbitrary one
+	Run insertion sort on small subproblems
+	Worst case will still be Theta(n^2) time
+	Can implement stable quicksort, but takes space from Theta(n) to O(nlogn) space (worse than mergesort)
+	But average case space complexity is better than mergesort (log n versus n)
 Quicksort has n space complexity but log n including the recursion stack
