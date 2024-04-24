@@ -1,0 +1,41 @@
+How can we analyze growth/efficiency of code?
+For loop from i = 0 to i < N will be executed N + 1 times since it has to check at the end to terminate the loop 
+INSIDE the for loop will just be N since it won’t execute that last time
+A method may have c1 + c2 + (N + 1) (c3) + N (c4) + c5 = N (c3 + c4) + c1+ c2 + c3 + c5. 
+Just a polynomial ax + b, is linear
+Any function that is just a single for loop has linear growth (in general)
+If you have a for loop within a for loop, first one will run N + 1 times, but second one will run N (N + 1) times. N comes from executing inside first loop, N + 1 comes from for loop checking, stuff INSIDE the second for loop will run N^2 times. 
+Now it’s in form ax^2 + bx + c (quadratic) 
+For loop within for loop is quadratic
+
+Lets say you have a loop for (int i = 0; x <= N; i++) { x += i; }
+X will grow by i, 0 - > 1 -> 3 -> 6 -> 10 -> etc. 
+x = 1 + 2 + 3 + … + k where k = i
+So x = [k (k + 1)] / 2 by summation
+[k (k + 1)] / 2 > n
+Approx. k^2 > n, k > sqrt(n)
+
+For (int i = 1; i < N; i = i * 2)
+i goes from 1 to 2 to 4 to 8 to 16 etc, so it’s equal to 2^i
+So 2^i > N, log conversion log2(N) > i
+
+
+i : x 
+0 : 0 
+1 : 1 
+2 : 3 
+3 : 6 
+4 : 10
+5 : 15
+6 : 21
+7 : 28
+8 : 36
+derivative is x, so 1/2 x ^ 2 = n, 2n = x^2, x = 2 sqrt(n)
+1 + 1 + 2(sqrt n) + 1 + 2 (sqrt n)
+= 4(sqrt n) + 3
+
+for (int i = 1; i < N; i = i * 2) { something; }
+i: 
+1 -> 2 -> 4 -> 8 -> 16
+2^i > N 
+log2(N) > 2
