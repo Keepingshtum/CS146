@@ -1,0 +1,24 @@
+Array operations: 
+  Insert/update/delete
+  Sort
+  Search
+  Element access is fast
+  Can be static (fixed size) or dynamic (variable size)
+
+Sets: 
+  Insert/update/delete
+  Search
+  Sort
+  Elements are unique
+  Sorting may or may not make sense depending on situation
+
+Hashmap: 
+  Insert/update/delete
+  Sort
+  Search
+  Most useful IRL
+  Use key to point to value
+  Can sort a hashmap technically
+  Very fast element access and search
+
+Others: stacks, queues, linked lists, trees, graphs
