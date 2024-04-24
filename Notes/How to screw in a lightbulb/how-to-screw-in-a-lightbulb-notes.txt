@@ -1,6 +1,6 @@
 Insertion sort follows a special rule that is true at *three* points in the lifetime of the algorithm: 
-Initialization: The rule applies before the first iteration
-Maintenance: The rule holds true between iterations
-Termination: The rule holds true after the last iteration as well.
+  1. Initialization: The rule applies before the first iteration
+  2. Maintenance: The rule holds true between iterations
+  3. Termination: The rule holds true after the last iteration as well.
 What is this rule? At the start of each iteration, the subarray A[0: i - 1] is sorted. 
 This is called the ‘Loop Invariant’, proves correctness of algorithm (like mathematical induction). 
