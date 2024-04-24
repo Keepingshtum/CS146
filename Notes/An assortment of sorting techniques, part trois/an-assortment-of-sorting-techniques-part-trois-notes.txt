@@ -1,22 +1,21 @@
 Sorting algos we’ve looked at and their lower bounds:
-Insertion O(n^2)
-Merge O(nlogn)
-Quick O(nlogn)
-Heap O(nlogn)
+  Insertion O(n^2)
+  Merge O(nlogn)
+  Quick O(nlogn)
+  Heap O(nlogn)
 
 They r all multiplied by n, since they do comparisons, so they are comparison-based.
 We can represent how these algos work on outputs of size 3 using decision trees. 
-Want to sort 3 elements
 
 Merge sort: 
 The thing to notice is that there are 6 leaf nodes for sorting 3 numbers. This is true for all decision trees for comparison based sorting algos. 
 3! = 6 permutations for 3 elements. Ie, we need at LEAST 3 comparisons
 
   Generalizing to n elements, we get the condition: 
-  n! Permutations fit in a tree with 2^h possible nodes
-  n! must be less than 2^h
-  So, h >= omega(nlogn)
-  This means that there are no possible comparison based sorting algorithms that can be faster than nlogn (in worst case). 
+    n! Permutations fit in a tree with 2^h possible nodes
+    n! must be less than 2^h
+    So, h >= omega(nlogn)
+    This means that there are no possible comparison based sorting algorithms that can be faster than nlogn (in worst case). 
 
 Counting sort: 
   Step 1: Count the elements (occurrences)
@@ -28,10 +27,12 @@ Counting sort:
   Space complexity is Theta(2n+k) = Theta(n+k) since you need 2 arrays and the map
   We don’t use counting sort very often because it takes up too much space and isn’t too good if you have many unique numbers
   You could have 1 gb of numbers, k = 100n, and then you’d need 100gb of space to sort just 1 gb of data.
+
 Radix and Bucket Sort (also in linear time)
   Radix was used to sort punch cards
   Bucket sort is modified counting sort
   Both suffer from similar issues like taking up extra space and suited for special case inputs (small input, uniform distributions)
+
 Hashing: 
   Hashing is useful technique
   Used to encrypt the german enigma machines
@@ -44,7 +45,8 @@ Hashing:
     Uniformly distribute keys (each table position equally likely for each key)
     Minimize collisions
   Collisions clutter hashmaps
-  Dealing with hash collisions can be done in a few ways: 
+  
+Dealing with hash collisions can be done in a few ways: 
     Linear probing
       Traverse linearly, put element in next empty space
     Quadratic probing
@@ -53,5 +55,6 @@ Hashing:
       Using additional data structures to allow for multiple values at the same index
     Double hashing
       Using second hash function to decrease collision chances
-    Hashmaps are very efficient
+  
+Hashmaps are very efficient
       Insert, delete, referencing from hashmap is Theta(1)
