@@ -36,6 +36,6 @@ Create an issue with the [ENHANCEMENT] tag and I'll understand what you're tryin
 
 For example, if you wished for a new category for submissions called "Underwater Basketweaving", you want to have an issue title like
 
-[ENHANCEMENT] Add underwater basketweaving category
+[ENHANCEMENT] Add underwater basketweaving category [Anant Shukla]
 
 In the issue body, explain why underwater basketweaving is the best thing ever, and how it helps you prepare for the final
