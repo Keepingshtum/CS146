@@ -1,0 +1,16 @@
+Programming paradigm, not algorithm
+
+Tabulation is solving and keeping answers in a SPECIFIC ORDER so that you know you can build off of subproblems later
+Memoization is is keeping answers to subproblems in a data structure to access them later so you don’t have to do the same thing in a problem twice
+
+Knapsack problem:
+  Given N items where each item has a given weight and given profit as well as a bag with capacity C, calculate maximum profit can make by putting items in the bag
+  How to solve algorithmically? 
+    Boils down to either including or not including item in knapsack
+    Make a table, rows are the items with their profits and weights
+    Columns are for each capacity (0, 1, 2) to decide what you’d pick for each capacity, putting profit in the cell
+    As you go down the rows, when you have to make a choice between two items. Pick between what your knapsack would look like if you included new item and dropped old item, or choose not to take new item
+    Since you already have chosen the best decision in the above row, you only need to consider current row and last row, not any others
+
+Tabulation is more work than we need to, but if we solve subproblems optimally, we can have an optimal solution
+But memoization is preferable
