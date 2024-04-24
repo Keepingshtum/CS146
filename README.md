@@ -4,7 +4,7 @@
 
 You want to contribute *meaningfully* to this repository to earn extra credit. Each contribution is worth the same as submitting to an extra credit assignment in class. 
 
-Ensure that your contibutions follow the [Contribution Guidelines](contributing.md). If they don't, I won't merge your pull requests, and someone else might be able to steal all your hard work!
+Ensure that your contibutions follow the [Contribution Guidelines](CONTRIBUTING.md). If they don't, I won't merge your pull requests, and someone else might be able to steal all your hard work!
 
 ### What counts for extra credit
 Every subfolder you see is one potential area to earn extra credit. 

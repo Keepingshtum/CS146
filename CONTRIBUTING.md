@@ -29,4 +29,5 @@ For notes, you could do something like
 [NOTES] - Structuring our thoughts lecture notes - [Anant Shukla]
 
 
+
 If you do not follow these conventions, I probably won't look at your pull request, so do be careful!
