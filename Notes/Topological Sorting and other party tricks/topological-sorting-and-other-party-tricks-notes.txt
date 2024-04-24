@@ -1,0 +1,19 @@
+BFS and DFS time/space complexity: 
+  O(V+E) time complexity for both and all cases, O(V) for both, where V is number of vertices and E is number of edges. 
+
+Topological Sort: 
+  Some processes have to come before others, but not all have to be sequential
+  Key to understanding topological sort: node with indegree of 0 must come first, node with outdegree of 0 must come last
+  
+Ways to do it:
+  Kahn’s Algorithm: count and decrement indegrees
+    Add all nodes with in-degree 0 to a queue and add them to the list
+    While queue is not empty
+      Remove from queue
+      add to sorted result (if not already present)
+      add each outdegree node to queue
+
+DFS/BFS works too
+  Does not work on cyclic graphs or any DAGs with cycles
+
+Kahn’s is O(V+E) time and O(V) for space in queue/stack
