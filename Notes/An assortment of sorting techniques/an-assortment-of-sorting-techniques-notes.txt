@@ -1,0 +1,78 @@
+Sorting (Mergesort, Quicksort)
+
+Mergesort splits the array until it is in groups of 2
+Sorts groups of 2, then merges them into 4, then etc. 
+What if there are an odd number of elements?
+	Left half gets extra element (arbitrary, but a convention)
+How does the merge operation even work?
+	Merge elements from two arrays, such that we end up with an array that is sorted
+	Visual ex: 
+[1, 2, 3] and [4, 5]
+1 > 4, so place 1 in first
+2 > 4, so place 2 in second
+3 > 4, so place 3 in third
+No elements left to compare, fill remaining elements
+	Example is a little special, since the arrays were already sorted, which simplifies merge operation
+
+Pseudocode:
+Merge(array a, array b, size m, size n)
+i,j,k = 0
+array c = []
+while (i <= m && j <= n) (while arrays still have sortable elements) {
+	if (A[i] < B[j]) { C[k++] = A [i++] }
+	else { C[k++] = B[j++] }
+}
+And then 2 more while loops to fill remaining elements once one array is empty
+
+Time complexity:
+	Merge is theta(nlogn) best average worst
+	The recurrence relation (recursive part) is log(n) since you’re splitting it in half a bunch of times
+	You’re doing an n thing for every log(n), so prob n * log(n) = theta(nlog(n))
+
+How much space does this algorithm use? 
+Space complexity: 
+	m + n elements worth, which translates to theta(n)
+Mergesort optimizations: 
+	Check if array is sorted before starting dividing/merging
+		Reduces time complexity for best case from nlog(n) to n (but is a little less optimized for non best case, but not by much)
+		Linear search is theta(n)
+	Iterative flavor of mergesort: 
+		Was preferred when recursion was not as efficient
+Mergesort is stable:
+	Equivalent elements retain relative positions after sorting
+
+
+Quicksort 
+quickSort(array, leftmost, rightmost)
+if leftmost < rightmost
+	Break array in half (partition)
+Quicksort left half
+Quicksort right half
+
+Assign a pivot (for example, rightmost element)
+Compare elements with pivot, from left to right
+Elements less than or equal to pivot should be swapped to the left
+Elements greater than pivot should be to the right
+1 4 3 5 2 (select 2 as pivot)
+1 < 2, so swap 1 with 1
+1 4 3 5 2
+4 > 2, so do nothing (but keep track of 4)
+1 4 3 5 2
+3 > 2, so swap 4 and 3
+1 3 4 5 2
+5 > 2, so do nothing
+1 3 4 5 2
+End of traversal, swap pivot to correct position. Return index of pivot so we can do it until sorted
+1 3 2 5 4
+
+If we pick largest element as a pivot, it will be bad. Theta(n^2) worst case
+Also if lots of duplicates in array, it will get bogged down for no reason, esp if it’s unstable
+Fixes:
+	Pick middle element as pivot (Hoare’s partition)
+		Goes from Theta(n/2) to Theta(n/6) partitions
+	Pick a random pivot instead of an arbitrary one
+	Run insertion sort on small subproblems
+	Worst case will still be Theta(n^2) time
+	Can implement stable quicksort, but takes space from Theta(n) to O(nlogn) space (worse than mergesort)
+	But average case space complexity is better than mergesort (log n versus n)
+Quicksort has n space complexity but log n including the recursion stack
