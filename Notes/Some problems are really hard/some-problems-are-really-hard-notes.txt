@@ -1,0 +1,29 @@
+Every problem we’ve seen has been solvable algorithmically in polynomial time
+Sorting, searching, tree traversal, bfs, dfs, topo sort, mst’s, sssp, apsp
+Even O(2^n) is polynomial time
+These are “P” or “P-Class” problems/algos
+
+Not every problem is that easy
+These sorts of problems are “Nondeterministic-Polynomial” (NP)
+P problems are a subset of NP problems
+
+Reductions
+  Trick to find relationship between P and NP
+  Flawed Intuition: 
+    If I know a fast way to solve a sudoku, then I should be able to solve all sizes of sudoku problems
+    If I can transform another problem into a sudoku problem, then I can use the sudoku algorithm to solve the problem
+    Applying this logic, we have NP Complete problems. A problem is NP Complete if: 
+      1. It is NP
+      2. Every other problem in NP can be reduced to this problem
+    Most NP problems we know are NP complete, but a few that we aren’t sure about
+    Can we reduce NP problem to P problem?
+    2 subsets of NP, NP complete and P. Some problems are just NP (neither complete nor P)
+
+We don’t know if NP = P, very important question
+  IF P = NP: 
+    All of cryptography must change
+    We can solve every other problem we don’t have solutions for (since we can write a problem to prove them all)
+    (However, the solutions may not be practical, they could be O(n^100))
+  If P =/= NP: 
+    We can stop wasting time on other problems
+    And be sure that some problems (like cryptography) are really hard
