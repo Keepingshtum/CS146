@@ -1,0 +1,53 @@
+Problem #1:
+
+a=2, b=1, f(N)=1
+ f(N)=O(Nc) where c=0
+Thus, T(N)=Θ(Nlogb​a) = Θ(Nlog1​2) = Θ(N)
+so Recurrence 1: T(N)=Θ(2N),T(N)=Θ(2^N)
+
+a=3, b=1, f(N)=N
+As f(N)=O(Nc) where c=1
+Thus, T(N) = Θ(N1logN) = Θ(NlogN)
+so Recurrence 2: T(N)=Θ(2N),T(N)=Θ(3^N)
+
+T(n)=4T(n/2​)+n2logn
+a=4
+b=2
+f(n) = n^2logn
+so T(n)=Θ(n^2logn)
+
+T(n)=5T(n/2​)+n2/logn​
+a=5
+b=2
+f(n) = n2/logn​
+
+T(n)=5T(n/2)+ logn n^2/logn
+
+T(N) = 9T(N/2) + n^2
+a = 9
+b = 2 
+f(n) = n^2
+so T(n)=Θ(n^logb a )=Θ(n^log2 9)
+
+T(N) = 100T(N/2) + nlog2cn + 1  (c is a constant)
+a = 100
+b = 2
+f(n) = n log2 (cn)+1
+t(n) = Θ(n ^ logb a logn) = Θ(n^2 log n)
+
+
+Probelm #2:
+
+ yetAnotherFunc  the input size  is n.
+for(i=0;i<10n;i++)  this input size in n/2
+ so the recurrence relation is T(n) = 2T(n/2) = O(n)
+  The time complexoty of yetAnotherFunc is T(n) = Θ(nlogn)
+  
+
+
+
+
+
+
+
+
