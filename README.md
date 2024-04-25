@@ -4,7 +4,11 @@
 
 You want to contribute *meaningfully* to this repository to earn extra credit. Each contribution is worth the same as submitting to an extra credit assignment in class. 
 
-Ensure that your contibutions follow the [Contribution Guidelines](CONTRIBUTING.md). If they don't, I won't merge your pull requests, and someone else might be able to steal all your hard work!
+Ensure that your contributions follow the [Contribution Guidelines](CONTRIBUTING.md). If they don't, I won't merge your pull requests, and someone else might be able to steal all your hard work!
+
+Remember, once someone merges code/ notes/ etc. to the repo, it's not a guarantee it's perfect. You can always raise new PRs which improve on what's on the Repo already, or raise issues that point out flaws/ areas of improvement.
+
+Also remember to check this Readme/ other docs frequently, as things might change!
 
 ### What counts for extra credit
 Every subfolder you see is one potential area to earn extra credit. 
@@ -36,7 +40,7 @@ Every subfolder you see is one potential area to earn extra credit.
    
     d. Plain English Approach (This should match the Java/Python solutions)
 
-    Obviously, each extra credit problem may not need all of these, since some asked for a plain text submission. Exercise your judgement, you are all smart enough to understand what is needed for each problem!
+    Obviously, each extra credit problem may not need all of these, since some asked for a plain text submission. Exercise your judgment, you are all smart enough to understand what is needed for each problem!
 
 7. #### Notes
 
@@ -46,7 +50,12 @@ Every subfolder you see is one potential area to earn extra credit.
 
     See some code that will never execute? Some statements that are flat out wrong? Create an issue! If it's a valid concern, I will approve it. Ideally, if you saw the issue, you should also propose a fix. If you're too lazy to that, someone else can always fix it for extra credit. Make sure you follow the [Issue Guidelines](ISSUES.md).
 
-9. #### Enhancements
+   If you just propose an approved issue, you get one count of extra credit. The issue is then open to the public, whoever opens a PR to fix that issue (and gets approved) first, gets a count of extra credit.
+   If you propose a fix that gets approved in the issue, you will get two counts of extra credit.
+
+   Look for the "help wanted" label on issues to quickly figure out which issues have been approved and need a fix. 
+
+10. #### Enhancements
 
     Really wish there was an extra subfolder for something? Think there's a better way to do things? Create an issue! More details under [Issue Guidelines](ISSUES.md).
 

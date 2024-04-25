@@ -1,0 +1,18 @@
+Binary Search Trees:
+  Good for searching (hmmm)
+  Traversal:
+    Left -> lesser than parent, Right -> greater than parent
+    2 cases: element is there, or it isn’t there and we have to traverse the tree
+    Inorder traversal: LNR
+    Preorder: NLR
+    Postorder: LRN
+  Insertion:
+    Can have duplicate values:
+      Approach 1: Add duplicate element as right/left child (use right for stability during in-order traversal)
+      Approach 2: Augment with counts
+  Deletion:
+    For leaf nodes, just traverse to node and delete it
+    For branch nodes, you have to find the smallest value greater than the node you’re deleting to preserve BST property properly:
+      Go to right child of node you’re deleting, then go down left children until no left children left, then swap it in
+    Best Theta(1), avg Theta(logn), Worst Theta(n) for search, insert, delete (but best case for insertion is rare, only if inserting first value iirc)
+    Traversal worst case collapses when BST is skewed (just one long chain of just right and left subchildren)
