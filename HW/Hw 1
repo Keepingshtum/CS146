@@ -1,0 +1,13 @@
+function isPalindrome(s):
+    s = s.toLowerCase()
+    s = s.replace(/[^a-z0-9]/g, "")
+
+    left = 0
+    right = length(s) - 1
+    
+    while left < right:
+        if s[left] != s[right]:
+            return false
+        left++
+        right--
+    return true
