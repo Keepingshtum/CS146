@@ -1,0 +1,7 @@
+first sort list
+ignore lists < len(3)
+first pointer is i
+iterate through list with i, skipping duplicates after first time
+two other pointers, left and right. Left starts immediately to right of i, right starts at end of list
+constrict left and right according to whether sum is too large or too small
+when 0 sum is hit, add three sum to result list
