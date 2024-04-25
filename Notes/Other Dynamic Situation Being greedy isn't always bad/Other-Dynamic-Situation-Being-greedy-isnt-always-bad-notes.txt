@@ -1,0 +1,25 @@
+GREEDY ALGORITHMS 
+
+Greedy approach is most intuitive of all
+At each step, pick best option in front of us
+Keep doing that until optimal solution is found
+
+Greedy example: 
+  Given US denomination coins, find least amount of coins for 40 cents
+    25 + 10 + 5 = 40
+  How did we solve it? Chose biggest denomination that isn’t higher than the amount of money we still need
+    40 left, take 25 = 15
+    15 left, take 10 = 5
+    5 left, take 5 = 0
+    0 cents left, so you’re good
+  Let’s say we can’t use the 5 cent coin. Then our algorithm would go:
+    40 left, take 25 = 15
+    15 left, take 10 = 5
+    5 left, take 5 ones = 0
+  Results in 7 coins
+  If we weren’t being greedy, the optimal solution would be taking 4 x 10c. 
+  Even though you are optimally solving the subproblem, you get a suboptimal solution
+
+Greedy proofs: 
+1. Prove that optimally solving subproblem leads to optimal solution (bottom-up)
+2. Prove that optimal solution will always be reached by greedy algorithm (top-down)
