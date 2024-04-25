@@ -5,3 +5,8 @@ One server can handle only one job at once. One job can only be executed by one 
 Once a server has finished executing its current job, it can be reassigned to a new job.
 
 Given an array of time intervals intervals where intervals[i] = [starti, endi], representing the start and end time for a particular job that needs to be executed, return the minimum number of servers required to run all jobs.
+
+Constraints:
+
+1 <= intervals.length <= 10^4
+0 <= starti < endi <= 10^6
