@@ -1,0 +1,6 @@
+For this assignment, when passing the intervals off to the function, I went with sorting the list of intervals using the first element.
+After that, I created two new lists, one for start times. and for end times respectively.
+Then I set a for loop to fill these lists up with their respective values
+
+Next I set a second for loop to iterate a variable from 0 to the last end time as to cover all possible start and end times,
+and if it matched with a start time, a variable called servers would go up by 1, and if it matched with an end time, it went down by 1
