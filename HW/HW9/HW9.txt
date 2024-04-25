@@ -1,0 +1,1 @@
+For both programs, I went with recursion, which checks whether the inputted nodes are greater or lesser than the root as to check the respective subtree for the desired common ancestor.
