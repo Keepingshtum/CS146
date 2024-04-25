@@ -1,0 +1,14 @@
+def coinChange(coins, amount):
+        table = new array of size (amount + 1)
+        set all values of table = amount + 1   //because even if smallest coin is 1, we cannot have more than "amount" number of coins
+        table[0] = 0
+
+        for sum in range (1, table.length):
+            for c in coins:
+                if c <= sum and table[sum - c] != amount + 1:
+                    table[sum] = min(table[sum], table[sum - c] + 1)
+
+        if table[amount] == amount + 1:
+            return -1
+        else:
+            return table[amount]
