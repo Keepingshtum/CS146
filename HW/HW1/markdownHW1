@@ -1,0 +1,3 @@
+scan pairs of characters from input string from outermost to innermost
+return false when a pair is different
+return true when scan is complete
