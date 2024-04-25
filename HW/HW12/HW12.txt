@@ -1,0 +1,3 @@
+For this homework, I went with Kruskal's Algorithm to solve it. The specifications essentially wanted a minimum spanning network of pipes between houses, assuming the starting house was where
+the main well was built.
+It probably would've made more sense to do Prim's Algorithm, but we ball.
