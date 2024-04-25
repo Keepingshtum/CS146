@@ -1,0 +1,17 @@
+ALL PAIRS SHORTEST PATHS
+
+Find shortest path from all vertices
+
+Floyd Warshall Algorithm: 
+  Have V x V table, shortest paths table (assume empty cells are nil or infinity)
+  Put 0s for edges to self (from 1 to 1 is 0, 2 to 2 is 0, etc.)
+  Then put direct edge weights (from 1 to 3 is 5, 3 to 2 is -3, etc.) we already know
+  Then do iteration, iterate k i and j to find new better paths from each node to each node (is the distance from 1 to 2 bigger than the distance from 1 to 4 + 4 to 2? if it is, then you can use 1 to 4 and 4 to 2 instead)
+  Ie, is the distance between i to j greater than i to k and k to j? 
+  Time complexity is Theta(n^3), space is O(V^2)
+  Essentially an exhaustive search
+
+Johnsons Algorithm
+  Run Bellman Ford on graph, do transformation to remove negative edges
+  Run Dijkstra’s for every vertex on resultant graph
+  Faster than Floyd-Warshall for sparse graphs
