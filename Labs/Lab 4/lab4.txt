@@ -1,0 +1,12 @@
+invertTree(root)
+  if root is null:
+    return root
+
+  set temp equal to root's left child 
+  set root's left child to root's right child
+  set root right's child to temp
+
+  invertTree(root left child)
+  invertTree(root right child)
+
+  return root
