@@ -1,0 +1,19 @@
+Problem 1:
+1. 10000000000n2 vs n3:
+The exponent of n3 is greater, thus it is asympotically greater. 
+
+2. n2 log(n) vs n(log(n))10:
+The exponent in n(log(n))10 is greater, thus it would be asymptotically greater.
+
+3. nlogn vs 2^(root(n)):
+The second one has the advantage of sporting exponential growth, so it is asymptotically greater.
+
+4. 2n vs 2^2n: 
+2^2n is asymptotically greater as 2n is double 2, and other than that there are no differences, so 2^2n will always be greater.
+
+Problem 2:
+The best case scenario for this isPrime function is intuitive, it would be when the number inserted is prime as it would be quickly computed in one fell swoop. The time complexity would be something constant, or big-O(1).
+
+The worst case scenario is if the number fed to the function is not prime, as the loop would iterate numerous times, depending on the number entered. It would be iterating square(n) times and would be notated as theta(square(n)).
+
+The average case would technically be dependant on if there are more primes than composites or vice versa, but that's a Math PhD tier question to answer so to boil it down to layman's level, it would share the same time complexity as the worst case as it would have to be a case where the loop iterates numerous time to find a match. Average case in asymptotic notation would be omega(square(n). 
