@@ -1,0 +1,6 @@
+This would be a useful property because stability is very important when sorting data when looking for 
+different things. For example if we sort a list of employees first by their department and then by their
+names, a stable sorter like Merge sort makes sure that within each department the employees' names remain 
+in the original order. It doesn't hold well when trying to use Quick Sort, simply due to it being so unstable. 
+The original order of elements is not guaranteed to be saved. This can lead to problems in which the sequence
+of elements carries meaning or is significant
