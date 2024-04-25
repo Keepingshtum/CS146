@@ -1,0 +1,6 @@
+Initialize array amountCoins, amount + 1. This is the amount of coins needed to create
+amount equal to index, and you cannot use more than the amount given, therefore amount + 1.
+We use a for loop to iterates through the the coins given, and updates amountCoins[i].
+If coin is less than amount then we use the coin, and choose between the minimum amount of coins
+to make the amount or the previous amountCoins[i-coin] and + 1 because the current coin.
+Then we just return the minimum amount of coins or -1 if it's not possible.
