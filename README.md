@@ -52,7 +52,8 @@ Every subfolder you see is one potential area to earn extra credit.
 
    If you just propose an approved issue, you get one count of extra credit. The issue is then open to the public, whoever opens a PR to fix that issue (and gets approved) first, gets a count of extra credit.
    If you propose a fix that gets approved in the issue, you will get two counts of extra credit.
-   
+
+   Look for the "help wanted" label on issues to quickly figure out which issues have been approved and need a fix. 
 
 10. #### Enhancements
 
