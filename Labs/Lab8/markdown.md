@@ -1,0 +1,1 @@
+The approach is to use tabulation. We keep track of the minimum number of coins we can use to fill an amount x from 0 to amount. We store that value in an array and update it as we increment through the sub-amounts.
