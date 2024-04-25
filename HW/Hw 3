@@ -1,0 +1,9 @@
+Insertion Sort: 
+
+Worst case time complexity: In the worst case time complexity is when everything is in reverse order. Insertion sort compares and shifts each element for each position. This results in the quadratic time complexity of O(n^2). 
+
+Best case time complexity: In the best case input array is already sorted, no element shifting is required, only need to iterate through the array once checked. 
+
+Average case complexity: Average case performs similar to Worst case complexity shifting elements multiple times which results in a quadratic time complexity. 
+
+Matrix multiplication: The time complexity of matrix multiplication depends on the size of the matrices; there are three nested loops iterating over the rows and columns of matrices A and B. Each iteration involves a constant number  of operations which results in a time complexity of O(n^3) here the  n  is representing  the size of matrices. 
