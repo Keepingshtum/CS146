@@ -25,5 +25,5 @@ We don’t know if NP = P, very important question
     We can solve every other problem we don’t have solutions for (since we can write a problem to prove them all)
     (However, the solutions may not be practical, they could be O(n^100))
   If P =/= NP: 
-  We can stop wasting time on other problems
-  And be sure that some problems (like cryptography) are really hard
+    We can stop wasting time on other problems
+    And be sure that some problems (like cryptography) are really hard
