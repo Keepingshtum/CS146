@@ -1,0 +1,13 @@
+1) Other than speed, algorithms performance is often evaluated based on space. I find it interesting how algorithms
+actually trade off one resource for the other, more specifically how some algorithms will trade space efficiency
+for time efficiency and vice versa. This idea does not only apply to algorithms but to data structures as well.
+
+2) HashSets are a data structure I have used before. A data structures class I took at my community college had us 
+design one. Being able to associate a hashcode to an element allows for very fast lookup which makes operations like
+searching, deleting and removing elements O(1). Because the of the nature of the data structure, the structures hash
+function can generate the same hashcode for two different elements, which can be dealt with by two methods, chaining
+and open addressing. For the HashSet that I build, I had implemented the chaining method where collisions are dealt
+with by creating a “bucket” for a given hashcode. Elements that are assigned the same hashcode by the hash function
+are put into the bucket. Because of these additional features that are a part of HashSets, these data structures consume
+more memory than other structures like arrays. Additionally, because they are sets, there is no order to the elements,
+which can be important in some cases.
