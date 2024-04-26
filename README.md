@@ -73,6 +73,4 @@ There are many other sources, so feel free to explore and experiment. Thumb rule
 
 ### FAQs
 
-1. I submitted a pull request for something, but somebody already submitted the same thing. What happens now?
--  Whichever pull request was created first will be accepted for extra credit. 
-
+See [FAQs Wiki Page](https://github.com/Keepingshtum/CS146/wiki/FAQs).
