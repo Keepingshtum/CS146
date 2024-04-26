@@ -1,0 +1,19 @@
+function minMeetingRooms(intervals)
+    initialize runtimes as a priority queue
+
+    // Add end time of the first server execution time
+    add intervals[0][1] to runtimes
+
+    // Loop thorugh all server execution times, begin at second
+    for i from 1 to length of intervals - 1
+        // If the current execution time starts by end of earliest execution time(or after)
+        // pop that execution time and add this one to queue
+        if intervals[i][0] >= value at top of runtimes
+            pop runtimes top
+            add intervals[i][1] to runtimes
+        else
+            // Add the current server execution's end time to the queue
+            add intervals[i][1] to runtimes
+
+    // The size of the queue denotes the amount of servers used by the end
+    return size of runtimes
