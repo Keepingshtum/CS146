@@ -1,0 +1,11 @@
+lowestCommonAncestor(root, p, q)
+    initialize iterator(Node) to root
+    initialize found to false
+    while not found
+        if (value of p >= value of iterator and value of q <= value of iterator) or (value of p <= value of iterator and value of q >= value of iterator)
+            set found to true
+        elif (value of p > iterator and value of q > value of iterator)
+            set iterator to right child of it
+        else
+            set iterator to left child of it
+    return iterator
