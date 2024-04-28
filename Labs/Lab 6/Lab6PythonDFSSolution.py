@@ -1,3 +1,5 @@
+# Lab 6 Python DFS Solution to detect cycles and uses array to track visited nodes
+
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
 
