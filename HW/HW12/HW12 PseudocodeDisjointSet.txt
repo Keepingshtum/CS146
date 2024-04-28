@@ -1,0 +1,31 @@
+function minCostToSupplyWater(n, wells, pipes)
+    initialize minCost to 0
+    initialize connected as disjointSet of size n + 1
+    initialize allCosts as empty list
+
+    // add costs of pipes to allCosts
+    for i from 0 to length of pipes
+        append pipes[i] to allCosts
+
+    // format the well costs into same format as pipes and add to allCosts
+    for i from 0 to n
+        create well as list containing 0, i + 1, wells[i]
+        append well to allCosts
+
+    // apply insertion sort based on cost to allCosts
+    for i from 1 to length of allCosts
+        assign j as i
+        while j > 0 and second element of allCosts at j-1 > second element of allCosts at j
+            swap elements at positions j-1 and j in allCosts
+            decrement j
+
+    // iterate through our sorted allCosts list
+    //   using a disjoint set to determine if a city is connected to an active water supply by either
+    //   a well or pipe, since our allCosts contains both
+    for i from 0 to length of allCosts
+        assign fromCity to first element of allCosts[i]
+        assign toCity to second element of allCosts[i]
+        if Find(fromCity) != Find(toCity)   // Find() is a disjointSet method returning the parent of the set
+            Union(fromCity, toCity)  // unite both disjoint sets into one
+            increment minCost by third element of allCosts[i]
+    return minCost
