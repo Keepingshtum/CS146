@@ -1,0 +1,9 @@
+threeSum(nums)
+    initialize triplets as an empty list
+    sort nums
+    for i from 0 to length of nums
+        for j from i + 1 to length of nums
+            for k from j + 1 to length of nums
+                if (sum of nums[i], nums[j], and nums[k] equals 0) and (triplets does not contain that sum)
+                    add [nums[i], nums[j], nums[k]] to triplets
+    return triplets
