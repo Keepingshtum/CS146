@@ -30,3 +30,32 @@ For notes, you could do something like
 
 
 If you do not follow these conventions, I probably won't look at your pull request, so do be careful!
+
+### Making changes to existing files
+
+As the Repo fills out, you probably want to shift focus to improving what we already have. Follow the same PR title conventions as above, but you want to leave a comment detailing the following:
+
+1.> What the current version of the file does
+
+2.> Why that is a problem
+
+3.> How your change will fix this problem. 
+
+
+Here's an example of a comment you should be leaving on a PR changing the Lab 1 Bruteforce solution:
+
+[Start of comment]
+
+1.> What the current version of the file does
+
+Finds a solution in O(n^2) time, but does not have comments explaining what is going on. 
+
+2.> Why that is a problem
+
+The code is currently quite difficult to follow without comments. 
+
+3.> How your change will fix this problem. 
+
+I've added comments to help make the code a little bit easier to read. 
+
+[End of comment]
