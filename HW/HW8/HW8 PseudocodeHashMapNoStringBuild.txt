@@ -1,0 +1,22 @@
+longestPalindrome(s)
+    // hashmap will hold character as key, and its corresponding count as value
+    initialize counts as empty hashmap
+    initialize longest as 0
+    initialize largestOddCount as 0
+
+    // Iterate through characters of string, add them to hashmap with value 1 
+    // if not present already, if it is present, increment the count of it by one
+    for i from 0 to length of s
+        if character s[i] is in counts
+            increment counts of s[i] by 1
+        else
+            set counts of s[i] to 1
+
+    // Add only even counts of respective characters, and the longest odd count
+    for each key in counts
+        if value of key % 2 equals 0
+            increment longest by counts of key
+        elif counts of key is greater than largestOddCount
+            set largestOddCount to counts of key
+    increment longest by largestOddCount
+    return longest
