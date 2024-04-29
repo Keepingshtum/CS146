@@ -1,0 +1,19 @@
+Pseudo Code: (copied from the homework assignment)
+
+MATRIX_MULTIPLY(A, B): 
+  if columns(A) ≠ rows(B):                                      // 1 time
+    raise ValueError("Matrix multiplication is not defined.")   // 1 time
+ 
+  rows_A ← number of rows in A                                  // 1 time
+  cols_A ← number of columns in A                               // 1 time
+  cols_B ← number of columns in B                               // 1 time
+  result ← matrix of size rows_A x cols_B filled with zeros     // 1 time
+
+  for i from 1 to rows_A do:                                    // n times
+    for j from 1 to cols_B do:                                  // n^2 times
+      sum ← 0                                                   // n^2 times
+      for k from 1 to cols_A do:                                // n^3 times
+        sum ← sum + A[i][k] * B[k][j]                           // n^3 times
+      result[i][j] ← sum return result                          // n^3 times
+
+The function is cubic, there are 3 nested for loops of constant size
