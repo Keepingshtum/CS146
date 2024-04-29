@@ -1,0 +1,33 @@
+Insertion Sort Time Complexity
+
+Pseudo Code:
+def insertionSort (arr)                        // size of array = n
+  int i = 1                                    // 1 time
+  while (i < arr.length)                       // n times 
+    int j = i                                  // n times
+    while j > 0 and arr[j - 1] > arr[j]        // n^2 times
+      swap arr[j - 1] and arr[j]               // n^2 times
+      j--                                      // n^2 times
+    i++                                        // n times
+  
+The growth of insertion sort is quadratic. 
+The nested while loops mean that the function grows at quadratic rate.
+
+Best Case Scenario
+Array is already sorted
+The nested while loop on line 8 will only trigger once because arr[j-1] will never be greater than arr[j]
+O(n)
+Ω(n)
+Θ(n)
+
+Worst Case Scenario
+Array is in reverse order, therefore the while loop will have to loop for the full range
+O(n^2)
+Ω(n^2)
+Θ(n^2)
+
+Average Case Scenario
+Array is shuffled in random order
+O(n^2)
+Ω(n^2)
+Θ(n^2)
