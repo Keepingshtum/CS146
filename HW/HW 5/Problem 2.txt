@@ -1,0 +1,19 @@
+Pseudo Code:
+
+yetAnotherFunc(n):       //T(n)
+  if n > 1:              // c1
+    for(i=0;i<10n;i++)   // c2
+      doSomething;       // c3
+    yetAnotherFunc(n/2); 
+    yetAnotherFunc(n/2);
+
+T(n) = T(n/2) + T(n/2) + 10 = 2T(n/2) + 10
+a = 2, a >= 1
+b = 2, b > 1
+f(n) = c1 + c2 + c3 = O(1) (constant), k = 0 in n^k(log n)^p
+
+log2(2) = 1 > 0, logab is greater than k
+
+Θ(n^1 log n) 
+
+Time Complexity: Θ(n logn)
