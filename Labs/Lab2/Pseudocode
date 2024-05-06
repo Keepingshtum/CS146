@@ -1,0 +1,16 @@
+function isAnagram(s, t):
+    if length of s is not equal to length of t:
+        return false
+
+    create a hash map
+
+    for each character c in s:
+        increment the count of c in the hash map
+
+    for each character c in t:
+        if c does not exist in the hash map or its count is 0:
+            return false
+        else:
+            decrement the count of c in the hash map
+
+    return true
