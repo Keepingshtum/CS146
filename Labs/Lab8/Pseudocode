@@ -1,0 +1,11 @@
+function coinChange(coins, amount):
+    dp = initializeArray(amount + 1, infinity)
+    dp[0] = 0
+    for i from 1 to amount:
+        for each coin in coins:
+            if i - coin >= 0:
+                dp[i] = min(dp[i], dp[i - coin] + 1)
+    if dp[amount] == infinity:
+        return -1
+    else:
+        return dp[amount]
