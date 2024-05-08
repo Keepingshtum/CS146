@@ -1,0 +1,8 @@
+To solve this problem, there are a couple things you need to grasp from the problem. As stated in the problem, we need to supply water to all houses in a village. Building wells in houses and/or connecting pipes to other houses suggests we are dealing with a graphing problem with a network of nodes and edges, with nodes being the homes and pipes being the edges. 
+
+Now, we need to put our engineering caps on and come up with a solution within financial constraints. We can imagine it won't be as easy as just building a well inside every home, but it's worth noting what the cost of building wells in every node is, as that is our baseline for supplying water, until we optimize it efficiently with pipes at least, which is another cost we need to make note of, as we are going to pay for pipes to deliver water in a certain path.
+
+So now, we can connect our real-world problem to a concept from class. Does this setup sound familiar? We need to find the cheapest path to link a network of houses together using pipes. That fits in with the definition of a Minimum Spanning Tree (MST). The MST algorithms we know best from the content is Prim's and Kruskal's algorithms. Start with any node/house and iteratively add the lowest cost pipe that connects a new house to the existing connected houses until the whole neighborhood/graph is connected. Your result is the minimum cost to supply water to the village!
+
+
+
