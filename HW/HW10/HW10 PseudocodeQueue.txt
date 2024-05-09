@@ -1,0 +1,31 @@
+Function levelOrder(root)
+    if root is null
+        return null
+    initialize levels as an empty list
+    initialize nodes as an empty queue
+    add root to nodes queue
+
+    // Below loop builds sublist for each level
+    while nodes is not empty
+        initialize level as an empty list
+        set x to the size of nodes  // Number of nodes in the current level
+
+        // Below loop processes each node in current level
+        for i from 0 to x - 1
+            n = nodes.poll()  // Removes node from queue
+
+            // Add the left child to the queue if it exists
+            if n.left is not null
+                nodes.add(n.left)
+
+            // Add the right child to the queue if it exists
+            if n.right is not null
+                nodes.add(n.right)
+
+            // Add the node's value to the current level's list
+            add n.val to level
+
+        // Add the completed current level's list to levels
+        add level to levels
+
+    return levels
