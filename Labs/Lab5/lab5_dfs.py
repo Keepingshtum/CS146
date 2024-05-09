@@ -12,4 +12,4 @@ class lab5:
             return isValidBSTHelper(node.left, minBound, node.val) and isValidBSTHelper(node.right, node.val, maxBound) #if both are true then we can return true, whatever these return are the result
             #when going left,we want to make sure left subtree is valid
             # we update node with left child, its minBound stays the same since we're going left, the right boundary is the nodes value, the left subtree has to be less than the parent so its now the right boundary
-        return isValidBSTHelper(root, float("-inf"), float("inf")) #return the helper function we just created
+        return isValidBSTHelper(root, float("-inf"), float("inf")) 
