@@ -1,0 +1,41 @@
+1. Converting an adjacency list to an adjacency matrix:
+
+I started to convert this into an adjacency matrix, by creating a square matrix where both the rows and columns
+represent the nodes in the graph. I then, fill the matrix with zeros, indicating no connections. Following that up,
+for each node  in the adjacency list I looked at its connections. If node A is connected to node B you find the row 
+for A and the column for B in the matrix and set that value to 1 indicating a connection. And, I repeated this for 
+all connections in the adjacency list.
+
+
+Initialize a square matrix M with dimensions equal to the number of nodes, filled with 0s
+For each node A in the adjacency list:
+    For each node B in A's list:
+        Set M[A][B] to 1
+
+
+2. Converting an adjacency matrix to an adjacency list:
+
+In converting an adjacency matrix to a list, I saw the matrix as a node grid with 1s indicating connections. 
+I created lists for each node scanning rows and columns to find and note these connections. Through this process 
+I built an adjacency list where each node's list reflected its connections, simplifying the graph's structure from 
+a numerical grid to a clear intuitive network representation.
+
+Initialize an empty list for each node
+For each row A in the adjacency matrix:
+    For each column B in row A:
+        If the value at [A][B] is 1:
+            Add node B to the list of node A
+
+
+
+3. Reversing the direction of each edge in a directed graph:
+In my directed graph each edge was like a one-way street from one node to another. When I decided to reverse the
+direction of each edge it was like changing the traffic flow to the opposite direction. Working with an adjacency 
+list I went through each node's list meticulously. If a node A initially pointed to node B, I flipped this 
+relationship so now node B would point back to node A. By doing this for every edge I ended up creating a brand-new 
+adjacency list where the directions of all edges were reversed, essentially mirroring the original paths in my graph.
+
+Initialize an empty list for each node to create a new adjacency list
+For each node A in the original adjacency list:
+    For each node B in A's list:
+        Add A to the list of B in the new adjacency list
