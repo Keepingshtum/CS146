@@ -1,0 +1,5 @@
+For this Lab, I utilized recursion, along with an extra function that handled the conditional that decided if the BST is valid or not and how it compared the tree's nodes using upper and lower bounds, 
+using the positive and negative infinity, then updating with the node value that was just traversed through.
+I found, yet again, that Java is way more tedious and picky about things than Python.
+
+I also used recursion for the printing of the tree, for testing purposes.
