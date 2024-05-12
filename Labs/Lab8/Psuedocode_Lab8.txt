@@ -1,0 +1,9 @@
+function coinChange(int coins, int amount)
+    array minCoins = amount + 1, minCoins[0] = 0
+    for each coin in coins:
+        for i from coin to amount:
+            minCoins[i] = min(minCoins[i], minCoins[i - coin] + 1)
+    if minCoins[amount] is infinity:
+        return -1
+    else:
+        return minCoins[amount]
