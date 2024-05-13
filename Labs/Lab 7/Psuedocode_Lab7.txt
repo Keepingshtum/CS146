@@ -1,0 +1,28 @@
+Start with n cities numbered from 0 to n-1
+Given an array of edges with [from i, to i, weight i] representing bidirectional weighted edges between nodes
+
+Create a distance matrix dist of size n x n, initialized with infinity
+Create variables minCities = infinity and minCity = -1
+
+For each edge in edges:
+    Update dist[fromi][toi] and dist[toi][fromi] with weighti
+
+For i from 0 to n-1:
+    Set dist[i][i] to 0 
+
+Floyd-Warshall Algorithm:
+    For k from 0 to n-1:
+      For i from 0 to n-1:
+        For j from 0 to n-1:
+           Update dist[i][j] to min(dist[i][j], dist[i][k] + dist[k][j])
+
+For each city i from 0 to n-1:
+    Count reachableCities = 0
+    For each city j from 0 to n-1:
+        If i != j and dist[i][j] <= distanceThreshold:
+            Increment reachableCities ++
+
+    If reachableCities < minCities or (reachableCities == minCities and i > minCity):
+        Update minCities = reachableCities and minCity = i
+
+Return minCity
