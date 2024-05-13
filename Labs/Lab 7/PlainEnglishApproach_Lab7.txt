@@ -1,0 +1,8 @@
+To solve this, we first need to understand what the problem is asking of us.
+This problem is talking about a bidirectional, weighted graph. Metaphorically the nodes are represented as cities, and the edges are the distances between the cities/nodes. 
+
+We need to find the smallest number of connectable cities within the distanceThreshold range. Now, checking for reachability with weighted edges with bruteforce would be computationally expensive, so clearly we need to employ an algorithm to optimize this task.
+
+So, if we remember the content from class, what is an algorithm we know that deals with edge weights while being efficient at calculating two directions? That's the Floyd-Warshall algorithm! 
+
+Once implemented, your code will be able to tackle this problem optimally.
