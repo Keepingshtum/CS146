@@ -1,0 +1,36 @@
+canFinish(numCourses, prerequisites):
+    // make adjacency list from prerequisites(edges)
+    initialize graph as a list of empty lists of size numCourses
+    // make array containing indegree of each node(course)
+    initialize indegree array of size numCourses with all zeros
+
+    // populate our adjacency list and indegree array
+    for each pair (course, prereq) in prerequisites:
+        add course to the list of prereq in graph
+        increment indegree of course by 1
+
+    // (Kahns algorithm)
+    // add nodes with indegree 0 to queue
+    initialize an empty queue
+    for i from 0 to numCourses - 1:
+        if indegree[i] is 0:
+            add i to the queue
+
+    // Keep track of count of sorted courses
+    initialize count to 0
+
+    // Execute Kahn's algorithm, procesing each node and deceresaing outgoing
+    // destination nodes for each incoming node, adding to queue if indegree
+    // reaches zero
+    while queue is not empty:
+        dequeue an element, course, from queue
+        increment count by 1
+        for each neighbor in graph[course]:
+            decrement indegree of neighbor by 1
+            if indegree[neighbor] is 0:
+                add neighbor to the queue
+
+    // Courses can be completed if there is a possible topological sorting
+    // in whihc case count will equal to the number of courses
+    return true if count equals numCourses
+    else false
