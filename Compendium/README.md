@@ -8,7 +8,7 @@ Information will attempt to be language neutral. Do note that I have a bias towa
 I currently use a format in which I 
 
 1. Provide a disclaimer at the top notifying the reader of any potential topics they may need to review in order to properly understand the given topic. A file on RB trees would mention the reader should be comfortable with BSTs (and the BST file should include a disclaimer letting the reader know they should be well versed in trees). 
-2. Have an "intuitroduction" at the start to introduce and give intuition to the topic. Rather than jumping right into the Dijkstra's algorithm, it may be a good idea to explain *what* the problem we're trying to solve is and even the general common-sense intuition before we even dive into pseudo-code or specific data structures.
+2. Have an "intuitroduction" (intuition introduction!) at the start to introduce and give intuition to the topic. Rather than jumping right into the Dijkstra's algorithm, it may be a good idea to explain *what* the problem we're trying to solve is and even the general common-sense intuition before we even dive into pseudo-code or specific data structures.
 3. Provide clear titles to each section to allow the discerning reader to navigate to the more substantive areas in a simple manner.
 4. Explain the topics in a textbook-like format rather than just notes. If the reader is looking for the bullet points, the notes section in this repo is the right resource for them. We're here to hammer nails, not thread screws :)
 
