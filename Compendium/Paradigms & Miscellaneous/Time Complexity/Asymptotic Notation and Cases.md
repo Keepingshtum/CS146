@@ -73,7 +73,7 @@ This is a more function-specific way of describing the behavior a function depen
 
 Say we have a linear search method. Imagine the *best case* scenario of a linear search. You find the element on the first try!
 
-What about the *worst* case? Well, since it's lineaar search, you'd go through the entire array and only find what you're looking for on the final try. 
+What about the *worst* case? Well, since it's linear search, you'd go through the entire array and only find what you're looking for on the final try. 
 
 The average case would most likely be somewhere in the middle. 
 
