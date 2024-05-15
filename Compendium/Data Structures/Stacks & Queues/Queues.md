@@ -13,7 +13,7 @@ Peek: O(1) time and space
 Since this isn't a indexed data structure, you can't access an arbitrary element or the size of the queue at O(1). These will usually be O(n) operations. 
 
 # Java Implementation
- Instantiate Queue: Queues are an interface, so you must instantiate it through something else. Usually a LinkedList or ArrayDeque
+Instantiate Queue: Queues are an interface, so you must instantiate it through something else. Usually a LinkedList or ArrayDeque. Don't forget to import java.util
 Ex: Queue<Integer> queue = new LinkedList<>();
 
 Add to queue: offer() inserts if possible, returns a boolean reflecting whether it was able to or not. add() does the same but throws an exception if no space available. Advised to use offer() unless you know what you're doing.
