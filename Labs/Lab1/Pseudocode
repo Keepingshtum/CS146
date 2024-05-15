@@ -1,0 +1,8 @@
+function twoSum(nums, target):
+    create a hash map
+    for each element in nums with index i:
+        calculate complement as target - nums[i]
+        if complement exists in the hash map:
+            return indices [hash_map[complement], i]
+        else:
+            add nums[i] to hash map with index i
