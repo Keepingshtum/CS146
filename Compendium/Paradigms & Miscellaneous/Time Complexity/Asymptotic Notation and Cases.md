@@ -63,7 +63,7 @@ This is effectively the same as saying that if O() and Ω() both exist and are e
 
 We prefer to use Θ() if possible since it is a very precise way to nail down a functions time. Imagine we had a function with time complexities O(n!) and Ω(n^2)! At large values of n, these are *very* different functions, so it's very hard to pinpoint its behavior (and thus compare it to other functions). 
 
-In addition, a function with O(n^2) could possibly be ALSO represented as O(n) or even O(log(n))! You don't know, since O(n^2) is *technically correct* to express a function that could also be expressed as O(1) (since it's an upper boundary). 
+In addition, a function with O(n^2) could possibly be ALSO represented as O(n) or even O(log(n)) if your function is in reality lesser than all of them! You don't know, since O(n^2) is *technically correct* to express a function that could also be expressed as O(1) (since it's an upper boundary). 
 
 When you get a Θ(n * log(n)), that is *insurance* that your function is of order nlog(n). No larger (such as n^2), no smaller (such as n), otherwise the proof wouldn't work. 
 
