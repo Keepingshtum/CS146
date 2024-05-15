@@ -61,7 +61,7 @@ Since our base function g(n) is still n, they are identical and of the same orde
 
 This is effectively the same as saying that if O() and Ω() both exist and are equivalent, then Θ() exists and is equal to them. For our above example, our reasoning can be essentially boiled down to the fact that we have created a function O(n) which has c2 = 10 and Ω(n) which has c1 = 1, and since they are both of g(n) = n, our Θ() is Θ(n)!
 
-We prefer to use Θ() if possible since it is a very precise way to nail down a functions time. Imagine we had a function with time complexities O(n^2) and Ω(n)! At large values of n, these are *very* different functions, so it's very hard to pinpoint its behavior (and thus compare it to other functions). 
+We prefer to use Θ() if possible since it is a very precise way to nail down a functions time. Imagine we had a function with time complexities O(n!) and Ω(n^2)! At large values of n, these are *very* different functions, so it's very hard to pinpoint its behavior (and thus compare it to other functions). 
 
 In addition, a function with O(n^2) could possibly be ALSO represented as O(n) or even O(log(n))! You don't know, since O(n^2) is *technically correct* to express a function that could also be expressed as O(1) (since it's an upper boundary). 
 
