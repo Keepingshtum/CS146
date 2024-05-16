@@ -20,7 +20,9 @@ Completion: Repeat the process until all vertices are explored and their shortes
 
 # Key Steps in Dijkstra's Algorithm:
 Select the Next Vertex: Use a priority queue to efficiently select the vertex with the smallest known distance.
+
 Update Distances: For each neighbor of the selected vertex, calculate the new distance and update if it is shorter.
+
 Repeat: Continue this process until the shortest paths to all vertices are found.
 
 
