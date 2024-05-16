@@ -4,7 +4,7 @@ Counting Sort is a non-comparative sorting algorithm that sorts elements based o
 # Easy Example:
 Suppose you have a collection of student test scores ranging from 0 to 100, and you want to sort these scores in ascending order. Counting Sort helps you achieve this by counting how many times each score appears and then using this information to place each score in its correct position in the sorted array.
 
-# Pseudocode:
+# Pseudocode: (NOT MY CODE)
 
 function countingSort(array, maxVal) is
     # Create a count array to store the count of each unique element
