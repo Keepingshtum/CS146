@@ -1,0 +1,42 @@
+The goal of this problem is to determine whether a given binary tree is a valid binary search tree. In a valid BST, the value of each node should be greater than all the values in its left subtree and less than all the values in its right subtree.
+The main idea is to use a recursive approach to traverse the tree and check if each node satisfies the BST property by maintaining valid ranges for the node values.
+Here's a simplified explanation of the concept using the main parts of the code:
+In Java:
+public static boolean isValidBST(TreeNode root) {
+    return validate(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+}
+
+private static boolean validate(TreeNode node, int minVal, int maxVal) {
+    if (node == null) {
+        return true;
+    }
+    
+    if (node.val <= minVal || node.val >= maxVal) {
+        return false;
+    }
+    
+    return validate(node.left, minVal, node.val) && validate(node.right, node.val, maxVal);
+}
+In Python:
+def isValidBST(root):
+    return validate(root, float("-inf"), float("inf"))
+
+def validate(node, min_val, max_val):
+    if not node:
+        return True
+    
+    if node.val <= min_val or node.val >= max_val:
+        return False
+    
+    return validate(node.left, min_val, node.val) and validate(node.right, node.val, max_val)
+In this part, we define the isValidBST method that takes the root of the binary tree as input. It calls the validate method with the root node and the initial valid range (Integer.MIN_VALUE to Integer.MAX_VALUEin Java, -inf to inf in Python).
+The validate method is a recursive helper function that takes a node, the minimum valid value (minVal or min_val), and the maximum valid value (maxVal or max_val) as parameters.
+We start by checking if the current node is null (in Python). If it is, we return true as an empty tree is considered a valid BST.
+If the current node's value is less than or equal to the minimum valid value or greater than or equal to the maximum valid value, we return false as it violates the BST property.
+We then recursively call the validate method on the left subtree of the current node, updating the maximum valid value to the current node's value. This ensures that all the values in the left subtree are less than the current node's value.
+Similarly, we recursively call the validate method on the right subtree of the current node, updating the minimum valid value to the current node's value. This ensures that all the values in the right subtree are greater than the current node's value.
+If both the left and right subtrees are valid BSTs, we return true.
+The recursive calls continue until all the nodes in the tree have been processed, effectively validating the entire binary search tree.
+In the main method (Python code), we create sample binary trees and call the isValidBST method to check if they are valid BSTs. The results are then printed.
+The main idea is to use recursion to traverse the tree and check if each node satisfies the BST property by maintaining valid ranges for the node values. By recursively validating the left and right subtrees with updated ranges, we ensure that the entire tree is a valid BST.
+
