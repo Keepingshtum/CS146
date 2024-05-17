@@ -1,0 +1,29 @@
+Asymptotic Notation
+
+Big-O (O): Represents upper bound of an algorithm's runtime
+Big-Omega (Ω): Represents lower bound of an algorithm's runtime
+Theta (Θ): Represents both upper and lower bounds
+
+Finding Big-O, Omega, Theta
+
+Example: f(n) = 10n + 100
+
+O(n), Ω(n), Θ(n)
+
+
+Look at highest degree terms to approximate
+Pick tightest bound possible
+
+Best, Worst, Average Cases
+
+Linear Search example
+
+Best Case: O(1), item at start
+Worst Case: O(n), item at end
+Average Case: O(n), sum(1...n)/n = (n+1)/2
+
+
+
+Asymptotic Notation for Code
+
+Count operation costs
