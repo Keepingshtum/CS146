@@ -1,0 +1,30 @@
+import heapq
+from typing import List
+
+class Solution:
+    def minMeetingRooms(self, intervals: List[List[int]]) -> int:
+        
+        intervals.sort(key=lambda x: x[0])
+
+        
+        min_heap = []
+        rooms = 0
+
+        for start, end in intervals:
+          
+            if min_heap and min_heap[0] <= start:
+                heapq.heappop(min_heap)
+            else:
+              
+                rooms += 1
+
+            heapq.heappush(min_heap, end)
+
+        return rooms
+
+# Test cases
+solution = Solution()
+intervals1 = [[0, 30], [5, 10], [15, 20]]
+print(solution.minMeetingRooms(intervals1))  # Output: 2
+intervals2 = [[0, 1], [1, 2], [2, 3]]
+print(solution.minMeetingRooms(intervals2))  # Output: 1
