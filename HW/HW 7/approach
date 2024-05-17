@@ -1,0 +1,37 @@
+The goal of this code is to determine the minimum number of meeting rooms needed to accommodate all the meetings without any overlaps. Each meeting is represented by a pair of start and end times.
+The main idea is to sort the meetings based on their start times and use a min heap (priority queue) to keep track of the end times of the active meetings. We can then compare the start time of each meeting with the minimum end time in the heap to determine if a new room is needed or an existing room can be reused.
+Here's a simplified explanation of the concept using the main parts of the code:
+In Python:
+intervals.sort(key=lambda x: x[0])
+In Java:
+Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
+In this part, we sort the meeting intervals based on their start times in ascending order. This allows us to process the meetings in chronological order.
+In Python:
+min_heap = []
+rooms = 0
+for start, end in intervals:
+    if min_heap and min_heap[0] <= start:
+        heapq.heappop(min_heap)
+    else:
+        rooms += 1
+    heapq.heappush(min_heap, end)
+In Java:
+PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+int rooms = 0;
+for (int[] interval : intervals) {
+    int startTime = interval[0];
+    int endTime = interval[1];
+    if (!minHeap.isEmpty() && minHeap.peek() <= startTime) {
+        minHeap.poll();
+    } else {
+        rooms++;
+    }
+    minHeap.offer(endTime);
+}
+In this part, we initialize a min heap (min_heap in Python, minHeap in Java) to store the end times of the active meetings. We also initialize a variable rooms to keep track of the number of meeting rooms needed.
+We iterate over each meeting interval. For each meeting:
+If the min heap is not empty and the minimum end time in the heap is less than or equal to the start time of the current meeting, it means that a meeting room is available. We remove the minimum end time from the heap using heapq.heappop() in Python or minHeap.poll() in Java.
+If the min heap is empty or the minimum end time is greater than the start time of the current meeting, it means that no meeting room is available. We increment the rooms count by 1 to indicate that a new meeting room is needed.
+We add the end time of the current meeting to the min heap using heapq.heappush() in Python or minHeap.offer() in Java.
+After processing all the meetings, the rooms variable will hold the minimum number of meeting rooms required.
+The main idea is to keep track of the end times of the active meetings using a min heap. By comparing the start time of each meeting with the minimum end time in the heap, we can determine if an existing meeting room can be reused or if a new room is needed. The min heap helps us efficiently find the earliest available room.
