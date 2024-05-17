@@ -1,0 +1,35 @@
+Selection Sort
+
+Avg : Big O(n^2)
+
+
+[2] [8] [5] [3] [9] [4] [1] 
+↑↑ 
+                                            
+  __  __ __ __ __ __                    
+ ↓   ↓   ↓   ↓   ↓    ↓  ↓
+[2] [8] [5] [3] [9] [4] [1] 
+ ↑______________________↑
+
+       
+[2] [8] [5] [3] [9] [4] [1]    
+ ↑______________________↑
+    
+// the first index will try looking for a vallue lower than that
+[1] [8] [5] [3] [9] [4] [2] 
+    
+
+SelectionSort(array)
+    n = length(array)   
+    for i from 0 to n-1       
+        min_index = i
+        for j from i+1 to n-1
+            if array[j] < array[min_index]
+                min_index = j
+        if min_index != i
+            swap(array[i], array[min_index])            
+    return array
+swap(a, b)
+    temp = a
+    a = b
+    b = temp
