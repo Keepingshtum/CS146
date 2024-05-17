@@ -1,0 +1,41 @@
+The goal of this problem is to determine if a given version number is considered bad or good based on a certain criterion.
+The main idea is to use a simple comparison to check if the given version number is greater than or equal to a predefined bad version number.
+Here's the concept using the main parts of the code:
+In Java:
+public static boolean isBadVersion(int version) {
+    int bad = 4;
+    if (version >= bad) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+public static void checkVersion(int version) {
+    if (isBadVersion(version)) {
+        System.out.println("Version " + version + " is considered bad.");
+    } else {
+        System.out.println("Version " + version + " is considered good.");
+    }
+}
+In Python:
+def isBadVersion(version):
+    bad = 4
+    if version >= bad:
+        return True
+    else:
+        return False
+
+def checkVersion(version):
+    if isBadVersion(version):
+        print("Version {} is considered bad.".format(version))
+    else:
+        print("Version {} is considered good.".format(version))
+In this part, we define the isBadVersion method ( in Python) that takes a version number (version) as input. It compares the given version number with a predefined bad version number (bad).
+If the given version number is greater than or equal to the bad version number, the method returns true (or True in Python), indicating that the version is considered bad.
+If the given version number is less than the bad version number, the method returns false (or False in Python), indicating that the version is considered good.
+We also define the checkVersion method ( in Python) that takes a version number as input. It calls the isBadVersion method to determine if the version is bad or good.
+If the version is bad, it prints a message indicating that the version is considered bad.
+If the version is good, it prints a message indicating that the version is considered good.
+In the main method ( Python code), we prompt the user to enter a version number to check. We then call the checkVersion method with the entered version number to determine if it is bad or good and print the corresponding message.
+The main idea is to use a simple comparison to check if the given version number is greater than or equal to a predefined bad version number. This allows us to determine if a version is considered bad or good based on the comparison result.
