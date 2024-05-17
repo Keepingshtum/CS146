@@ -1,0 +1,28 @@
+Sorting Lower Bounds:
+
+Comparison-based sorting algorithms (like insertion sort, merge sort, quicksort, heapsort) cannot be faster than O(n log n) in the worst case
+This is because any comparison-based sorting algorithm must make at least n! comparisons in the worst case to sort n elements
+
+Counting Sort:
+
+A stable, linear time O(n+k) sorting algorithm (k is the range of values)
+Works by counting frequencies of each value, then using cumulative counts to place elements
+Requires extra space O(n+k), impractical when k is very large compared to n
+
+Radix Sort and Bucket Sort:
+
+Other linear time sorting algorithms
+Have similar space inefficiency issues as Counting Sort
+
+Hashing:
+
+Converting data to fixed-size values (hashes) using a hash function
+Applications: cryptography, databases, load balancing, hashmaps
+
+Hashmaps:
+
+Use hashes as keys to store key-value pairs
+Ideal hash functions distribute keys uniformly and minimize collisions
+Dealing with collisions: linear probing, quadratic probing, separate chaining, double hashing
+Hashmaps provide O(1) time complexity for insertions, deletions, lookups
+Essential data structure in the real world
