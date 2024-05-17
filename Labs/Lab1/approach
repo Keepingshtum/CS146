@@ -1,0 +1,33 @@
+The goal of this problem is to find two numbers in a given array that add up to a specific target sum and return their indices.
+The main idea is to use a hash table (dictionary in Python) to store the complement of each number and its index while iterating through the array. This allows for efficient lookup of the complement when encountered.
+Here's the concept using the main parts of the code:
+In Java:
+public static int[] twoSum(int target, int[] nums) {
+    Map<Integer, Integer> num = new HashMap<>();
+    
+    for (int i = 0; i < nums.length; i++) {
+        int complement = target - nums[i];
+        if (num.containsKey(complement)) {
+            return new int[]{num.get(complement), i};
+        }
+        num.put(nums[i], i);
+    }
+    
+    return new int[]{-1, -1};
+}
+In Python:
+def sum(target, nums):
+    d = {}
+    
+    for i, n in enumerate(nums):
+        if target - n in d:
+            return [d[target - n], i]
+        d[n] = i
+In this part, we define the twoSum method (or sum function in Python) that takes the target sum (target) and the array of numbers (nums) as input.
+We initialize an empty hash table (num in Java, d in Python) to store the complement of each number and its index.
+We iterate through the array nums using a loop. For each number nums[i] (or n in Python), we calculate its complement by subtracting it from the target sum (complement = target - nums[i] in Java, target - n in Python).
+We check if the complement exists in the hash table. If it does, it means we have found two numbers that add up to the target sum. We return an array containing the indices of the complement (stored in the hash table) and the current number.
+If the complement is not found in the hash table, we add the current number and its index to the hash table. This allows us to check for the complement of future numbers.
+If no two numbers are found that add up to the target sum, we return an array with two elements as -1 (indicating no solution found).
+In the main method (Python code), we create an array of numbers nums and a target sum target. We call the twoSum method (or sum function) with these inputs and print the resulting indices.
+The main idea is to use a hash table to store the complements and their indices while iterating through the array. By checking if the complement of each number exists in the hash table, we can efficiently find two numbers that add up to the target sum.
