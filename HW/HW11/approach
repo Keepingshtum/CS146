@@ -1,0 +1,39 @@
+The goal of the flood fill algorithm is to fill a connected region in a multi-dimensional array with a new color, starting from a given starting cell. The connected region is defined as cells that have the same original color as the starting cell and are adjacent to each other (up, down, left, or right).
+The main idea is to use a recursive approach to traverse the connected region and update the color of each cell to the new color.
+Here's the concept using the main parts of the code:
+In Java:
+if (image[sr][sc] == color) return image;
+fill(image, sr, sc, image[sr][sc], color);
+In Python:
+if image[sr][sc] == newColor:
+    return image
+self.fill(image, sr, sc, image[sr][sc], newColor)
+In this part, we first check if the color of the starting cell (image[sr][sc]) is already equal to the new color. If it is, we can simply return the original image as there is no need to perform the flood fill. Otherwise, we call the fill method (or function) to start the recursive flood fill process.
+In Java:
+private void fill(int[][] image, int i, int j, int originalColor, int newColor) {
+    if (i < 0 || i >= image.length || j < 0 || j >= image[0].length || image[i][j] != originalColor)
+        return;
+    
+    image[i][j] = newColor;
+    fill(image, i + 1, j, originalColor, newColor);
+    fill(image, i - 1, j, originalColor, newColor);
+    fill(image, i, j + 1, originalColor, newColor);
+    fill(image, i, j - 1, originalColor, newColor);
+}
+In Python:
+def fill(self, image, i, j, originalColor, newColor):
+    if i < 0 or i >= len(image) or j < 0 or j >= len(image[0]) or image[i][j] != originalColor:
+        return
+    
+    image[i][j] = newColor
+    self.fill(image, i + 1, j, originalColor, newColor)
+    self.fill(image, i - 1, j, originalColor, newColor)
+    self.fill(image, i, j + 1, originalColor, newColor)
+    self.fill(image, i, j - 1, originalColor, newColor)
+In this part, we define the recursive fill method (or function) that takes the image, current cell coordinates (i and j), original color, and new color as parameters.
+We first check if the current cell is within the image boundaries and if its color matches the original color. If either condition is not satisfied, we return and stop the recursion for that branch.
+If the current cell is valid and has the original color, we update its color to the new color (image[i][j] = newColor).
+We then make recursive calls to the fill method (or function) for the adjacent cells in all four directions (up, down, left, right). This ensures that we explore and fill the entire connected region.
+The recursive calls continue until all the cells in the connected region have been visited and updated with the new color.
+Finally, the modified image with the filled region is returned.
+The main idea is to use recursion to traverse the connected region starting from the given starting cell. By recursively visiting the adjacent cells and updating their colors, we fill the entire connected region with the new color.
