@@ -3,14 +3,11 @@ target = 100
 
 def findPair(arr, t):
     d = {}
-    for i in arr:
-        d[i] = t - i
-
-    for i in range(len(arr)):
-        if d[arr[i]] in d.keys():
-            for j in range(i+1, len(arr)):
-                if arr[j] == d[arr[i]]:
-                    return i, j
-    return -1,-1
+    for i, num in enumerate(arr):  # Use enumerate for index and value
+        complement = t - num
+        if complement in d:
+            return [d[complement], i]  # Directly return indices if found
+        d[num] = i  # Store the index
+    return [-1, -1]  # No solution found
 
 print(findPair(nums, target))
