@@ -1,0 +1,49 @@
+Quicksort 
+Best : Big O(n logn)
+Avg : Big O(n logn)
+Worst : Big O(n^2)
+
+
+[2] [8] [5] [3] [9] [4] [1] [7]
+   i                 ↑__| 
+                      j   
+
+[2] [8] [5] [3] [9] [4] [1] [7]
+      ↑________________↑
+      i               j 
+
+               j    
+       __ __ __ __ __                    
+   ↓   |  |  |   |   ↑ 
+[2] [1] [5] [3] [9] [4] [8] [7]
+      |__↑                  
+       i    
+                       
+[2] [1] [5] [3] [9] [4] [8] [7]
+ ↑__↑    i   
+  j         
+
+[1] [2] [5] [3] [9] [4] [8] [7]
+    
+
+function quickSort(arr, low, high)
+    if low < high then
+        pivotIndex = partition(arr, low, high)
+        quickSort(arr, low, pivotIndex - 1)
+        quickSort(arr, pivotIndex + 1, high)
+    end if
+end function
+
+function partition(arr, low, high)
+    pivot = arr[high]
+    i = low - 1
+    for j = low to high - 1 do
+        if arr[j] < pivot then
+            i = i + 1
+            swap arr[i] and arr[j]
+        end if
+    end for
+    i = i + 1
+    swap arr[i] and arr[high]
+    return i
+end function
