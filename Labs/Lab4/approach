@@ -1,0 +1,34 @@
+The goal of this problem is to invert a binary tree, which means swapping the left and right subtrees of every node in the tree.
+The main idea is to use a recursive approach to traverse the tree and swap the left and right subtrees of each node.
+Here's the concept using the main parts of the code:
+In Java:
+public TreeNode invertTree(TreeNode root) {
+    if (root == null) {
+        return null;
+    }
+    
+    TreeNode left = invertTree(root.right);
+    TreeNode right = invertTree(root.left);
+    
+    root.left = left;
+    root.right = right;
+    
+    return root;
+}
+In Python:
+def invertTree(self, root):
+    if root is None:
+        return None
+    
+    root.left, root.right = self.invertTree(root.right), self.invertTree(root.left)
+    
+    return root
+In this part, we define the invertTree method (or function) that takes the root of the binary tree as input.
+We start by checking if the root is null (in Python). If it is, we return null as there is no tree to invert.
+If the root is not null, we recursively call the invertTree method on the right subtree (root.right) and assign the result to a variable left. This step inverts the right subtree.
+Similarly, we recursively call the invertTree method on the left subtree (root.left) and assign the result to a variable right. This step inverts the left subtree.
+We then update the left and right pointers of the current node by assigning left to root.left and right to root.right. This step swaps the left and right subtrees of the current node.
+Finally, we return the modified root of the inverted tree.
+The recursive calls continue until all the nodes in the tree have been processed, effectively inverting the entire binary tree.
+In the main method ( Python code), we create a sample binary tree and call the invertTree method to invert the tree. We then call the print_tree method (or function) to print the values of the nodes in the inverted tree.
+The main idea is to use recursion to traverse the tree and swap the left and right subtrees of each node. By recursively inverting the left and right subtrees and then swapping them, we achieve the inversion of the entire binary tree.
