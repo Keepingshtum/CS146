@@ -1,0 +1,71 @@
+The goal of this code is to find the city with the smallest number of reachable cities within a given distance threshold. If there are multiple such cities, the code returns the city with the greatest number.
+The main idea is to use the Floyd-Warshall algorithm to calculate the shortest distances between all pairs of cities and then count the number of reachable cities for each city within the distance threshold.
+Here's the concept using the main parts of the code:
+In Python
+graph = [[float('inf')] * n for _ in range(n)]
+for u, v, w in edges:
+    graph[u][v] = w
+    graph[v][u] = w
+In this part, we create an adjacency matrix called graph to represent the connections between cities and their distances. We initialize all distances to infinity using float('inf'). Then, we iterate over each edge (u, v, w) in the edges list and update the corresponding entries in the graph matrix with the given distances.
+In Python
+for k in range(n):
+    for i in range(n):
+        for j in range(n):
+            graph[i][j] = min(graph[i][j], graph[i][k] + graph[k][j])
+In this part, we use the Floyd-Warshall algorithm to calculate the shortest distances between all pairs of cities. The algorithm iterates over all possible intermediate cities k and updates the distances in the graph matrix if a shorter path is found by going through city k.
+In Python
+reachable_cities = [0] * n
+for i in range(n):
+    for j in range(n):
+        if i != j and graph[i][j] <= distanceThreshold:
+            reachable_cities[i] += 1
+In this part, we create a list called reachable_cities to store the count of reachable cities for each city within the distance threshold. We initialize all counts to 0. Then, we iterate over all pairs of cities (i, j) and check if the distance between them is within the distanceThreshold. If so, we increment the count of reachable cities for city i.
+In Python
+min_reachable = min(reachable_cities)
+smallest_cities = [i for i, count in enumerate(reachable_cities) if count == min_reachable]
+return max(smallest_cities)
+In this part, we find the minimum number of reachable cities among all cities using min(reachable_cities). Then, we find the cities with the minimum number of reachable cities using a list comprehension. Finally, we return the city with the greatest number among the cities with the minimum number of reachable cities using max(smallest_cities).
+In Java
+double[][] distances = new double[n][n];
+for (int i = 0; i < n; i++) {
+    Arrays.fill(distances[i], Double.MAX_VALUE);
+    distances[i][i] = 0;
+}
+for (int[] edge : edges) {
+    int u = edge[0];
+    int v = edge[1];
+    int w = edge[2];
+    distances[u][v] = w;
+    distances[v][u] = w;
+}
+In this part, we create a 2D array called distances to represent the distances between cities. We initialize all distances to Double.MAX_VALUE (representing infinity) and set the distance from each city to itself as 0. Then, we iterate over each edge in the edges array and update the corresponding entries in the distances array with the given distances.
+In Java
+for (int k = 0; k < n; k++) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            if (distances[i][k] != Double.MAX_VALUE && distances[k][j] != Double.MAX_VALUE) {
+                distances[i][j] = Math.min(distances[i][j], distances[i][k] + distances[k][j]);
+            }
+        }
+    }
+}
+In this part, we use the Floyd-Warshall algorithm to calculate the shortest distances between all pairs of cities. The algorithm iterates over all possible intermediate cities k and updates the distances in the distances array if a shorter path is found by going through city k.
+In Java
+int minReachable = Integer.MAX_VALUE;
+int cityNumber = -1;
+for (int i = 0; i < n; i++) {
+    int reachable = 0;
+    for (int j = 0; j < n; j++) {
+        if (distances[i][j] <= distanceThreshold) {
+            reachable++;
+        }
+    }
+    if (reachable <= minReachable) {
+        minReachable = reachable;
+        cityNumber = i;
+    }
+}
+return cityNumber;
+In this part, we initialize minReachable to Integer.MAX_VALUE and cityNumber to -1. We iterate over each city i and count the number of reachable cities within the distanceThreshold. We update minReachable and cityNumber if we find a city with a smaller or equal number of reachable cities. Finally, we return the cityNumber of the city with the smallest number of reachable cities.
+
+The main idea is to calculate the shortest distances between all pairs of cities using the Floyd-Warshall algorithm and then count the number of reachable cities within the distance threshold for each city. By finding the cities with the minimum number of reachable cities and returning the city with the greatest number among them, we determine the city that satisfies the given criteria.
