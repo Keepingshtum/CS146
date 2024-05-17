@@ -1,0 +1,99 @@
+Here's a concise summary of the AVL Tree implementation and its characteristics:
+AVL Tree: A self-balancing binary search tree.
+Balance Factor: The difference between the heights of the left and right subtrees is no more than one.
+Operations:
+Insertion: Adds a new element while maintaining balance.
+Traversal: Visits all nodes in a specified order (e.g., pre-order).
+Deletion: Removes an element and rebalances the tree (complex implementation).
+Rotation Types:
+Left Rotation: Balances a right-heavy subtree.
+Right Rotation: Balances a left-heavy subtree.
+Left-Right and Right-Left Rotation: Balances a subtree with heavy opposite inner child.
+For further research and comparison with Red-Black Trees and B-Trees, consider exploring:
+Efficiency: How the height of the trees affects the complexity of operations.
+Use Cases: Ideal scenarios for each tree type (e.g., AVL in memory-constrained environments).
+Advantages: AVL Trees are more rigidly balanced, leading to faster lookups.
+Approach to solving the question:
+
+lass TreeNode:
+    def __init__(self, key, left=None, right=None, height=1):
+        self.key = key
+        self.left = left
+        self.right = right
+        self.height = height
+
+class AVLTree:
+    def get_height(self, root):
+        if not root:
+            return 0
+        return root.height
+
+    def get_balance(self, root):
+        if not root:
+            return 0
+        return self.get_height(root.left) - self.get_height(root.right)
+
+    def left_rotate(self, z):
+        y = z.right
+        T2 = y.left
+        y.left = z
+        z.right = T2
+        z.height = 1 + max(self.get_height(z.left), self.get_height(z.right))
+        y.height = 1 + max(self.get_height(y.left), self.get_height(y.right))
+        return y
+
+    def right_rotate(self, y):
+        z = y.left
+        T3 = z.right
+        z.right = y
+        y.left = T3
+        y.height = 1 + max(self.get_height(y.left), self.get_height(y.right))
+        z.height = 1 + max(self.get_height(z.left), self.get_height(z.right))
+        return z
+
+    def insert(self, root, key):
+        if not root:
+            return TreeNode(key)
+        elif key < root.key:
+            root.left = self.insert(root.left, key)
+        else:
+            root.right = self.insert(root.right, key)
+
+        root.height = 1 + max(self.get_height(root.left), self.get_height(root.right))
+        balance = self.get_balance(root)
+
+        # Left Left Case
+        if balance > 1 and key < root.left.key:
+            return self.right_rotate(root)
+        # Right Right Case
+        if balance < -1 and key > root.right.key:
+            return self.left_rotate(root)
+        # Left Right Case
+        if balance > 1 and key > root.left.key:
+            root.left = self.left_rotate(root.left)
+            return self.right_rotate(root)
+        # Right Left Case
+        if balance < -1 and key < root.right.key:
+            root.right = self.right_rotate(root.right)
+            return self.left_rotate(root)
+
+        return root
+
+    def pre_order_traversal(self, root):
+        if not root:
+            return
+        print("{0} ".format(root.key), end='')
+        self.pre_order_traversal(root.left)
+        self.pre_order_traversal(root.right)
+
+# Example usage:
+avl_tree = AVLTree()
+root = None
+numbers = [10, 20, 30, 40, 50, 25]
+
+for number in numbers:
+    root = avl_tree.insert(root, number)
+
+print("Preorder Traversal of the constructed AVL tree is:")
+avl_tree.pre_order_traversal(root)
+
