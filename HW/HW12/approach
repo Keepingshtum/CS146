@@ -1,0 +1,56 @@
+The goal of this problem is to find the minimum total cost to supply water to all houses in a village. Each house can either be connected to a well or to another house that is already connected to a water source. The cost of connecting a house to a well or to another house is given.
+The main idea is to use a minimum spanning tree algorithm, specifically Kruskal's algorithm, along with a disjoint set data structure to find the minimum cost connections.
+Here's a simplified explanation of the concept using the main parts of the code:
+In Python:
+def minCostToSupplyWater(n, wells, pipes):
+    costs = []
+    for i, cost in enumerate(wells):
+        costs.append((cost, 0, i + 1))
+    for house1, house2, cost in pipes:
+        costs.append((cost, house1, house2))
+    costs.sort()
+    
+    total_cost = 0
+    dsu = DisjointSet(n + 1)
+    for cost, house1, house2 in costs:
+        if dsu.union(house1, house2):
+            total_cost += cost
+    
+    return total_cost
+In Java:
+public int minCostToSupplyWater(int n, int[] wells, int[][] pipes) {
+    List<int[]> allPipes = new ArrayList<>();
+    for (int[] pipe : pipes) {
+        allPipes.add(pipe);
+    }
+    for (int i = 0; i < n; i++) {
+        allPipes.add(new int[]{0, i + 1, wells[i]});
+    }
+    Collections.sort(allPipes, (a, b) -> a[2] - b[2]);
+    
+    int[] parent = new int[n + 1];
+    for (int i = 0; i <= n; i++) {
+        parent[i] = i;
+    }
+    
+    int minCost = 0;
+    for (int[] pipe : allPipes) {
+        int u = find(parent, pipe[0]);
+        int v = find(parent, pipe[1]);
+        if (u != v) {
+            parent[u] = v;
+            minCost += pipe[2];
+        }
+    }
+    
+    return minCost;
+}
+In this part, we create a list (costs in Python, allPipes in Java) to store all the possible connections, including the connections from each house to a well and the connections between houses.
+We add the cost of connecting each house to a well as a tuple ((cost, 0, i + 1) in Python) or an array ({0, i + 1, wells[i]} in Java), where 0 represents the virtual node for wells, i + 1 represents the house, and wells[i] represents the cost of connecting the house to a well.
+We also add the cost of connecting two houses as a tuple ((cost, house1, house2) in Python) or an array ({house1, house2, cost} in Java), where house1 and house2 represent the houses, and cost represents the cost of connecting them.
+We sort the list of connections based on their costs in ascending order.
+We initialize a disjoint set data structure (DisjointSet in Python, parent array in Java) to keep track of the connected components.
+We iterate over the sorted list of connections. For each connection, we find the roots of the sets that the two houses belong to using the find function.
+If the roots are different, it means the houses are not already connected, so we perform a union operation to merge the sets and add the cost of the connection to the total cost (total_cost in Python, minCost in Java).
+Finally, we return the minimum total cost to supply water to all houses.
+The main idea is to use Kruskal's algorithm to build a minimum spanning tree by considering the connections in ascending order of their costs. The disjoint set data structure helps in efficiently tracking the connected components and avoiding cycles.
