@@ -1,0 +1,79 @@
+```python
+from collections import defaultdict, deque
+class Graph:
+   def __init__(self, vertices):
+       self.graph = defaultdict(list)
+       self.V = vertices
+   def add_edge(self, u, v):
+       self.graph[u].append(v)
+   def topological_sort_kahn(self):
+       in_degree = [0] * self.V
+       for i in self.graph:
+           for j in self.graph[i]:
+               in_degree[j] += 1
+       queue = deque()
+       for i in range(self.V):
+           if in_degree[i] == 0:
+               queue.append(i)
+       topo_order = []
+       while queue:
+           u = queue.popleft()
+           topo_order.append(u)
+           for v in self.graph[u]:
+               in_degree[v] -= 1
+               if in_degree[v] == 0:
+                   queue.append(v)
+       if len(topo_order) != self.V:
+           print("Graph has a cycle")
+           return None
+       else:
+           return topo_order
+   def topological_sort_bfs(self):
+       in_degree = [0] * self.V
+       for i in self.graph:
+           for j in self.graph[i]:
+               in_degree[j] += 1
+       queue = deque()
+       for i in range(self.V):
+           if in_degree[i] == 0:
+               queue.append(i)
+       topo_order = []
+       while queue:
+           u = queue.popleft()
+           topo_order.append(u)
+           for v in self.graph[u]:
+               in_degree[v] -= 1
+               if in_degree[v] == 0:
+                   queue.append(v)
+       if len(topo_order) != self.V:
+           print("Graph has a cycle")
+           return None
+       else:
+           return topo_order
+   def topological_sort_dfs(self):
+       visited = [False] * self.V
+       stack = []
+       def dfs_util(v):
+           visited[v] = True
+           for i in self.graph[v]:
+               if not visited[i]:
+                   dfs_util(i)
+           stack.append(v)
+       for i in range(self.V):
+           if not visited[i]:
+               dfs_util(i)
+       return stack[::-1]
+# Sample input
+g = Graph(6)
+g.add_edge(5, 2)
+g.add_edge(5, 0)
+g.add_edge(4, 0)
+g.add_edge(4, 1)
+g.add_edge(2, 3)
+g.add_edge(3, 1)
+
+
+print("Topological Sort using Kahn's algorithm:", g.topological_sort_kahn())
+print("Topological Sort using BFS:", g.topological_sort_bfs())
+print("Topological Sort using DFS:", g.topological_sort_dfs())
+```
