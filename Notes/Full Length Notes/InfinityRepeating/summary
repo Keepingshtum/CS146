@@ -1,0 +1,32 @@
+Recurrence Relations
+
+Analyzing time complexity of recursive code
+Example 1: someFunc(n)
+
+T(N) = T(N-1) + 1
+Solving gives: T(N) = 1 + N, so time complexity is Θ(n)
+
+
+Example 2: someFuncToo(n)
+
+T(N) = T(N-1) + N
+Solving gives: T(N) = (N)(N+1)/2 + 1, so time complexity is Θ(n^2)
+
+
+
+
+Master Theorem
+
+For "decreasing" functions: T(N) = aT(N-b) + f(n)
+
+Case 1: a < 1, then T(n) = O(n^k) or O(f(n))
+Case 2: a = 1, then T(n) = O(n^(k+1)) or O(n*f(n))
+Case 3: a > 1, then T(n) = O(n^(k*a^(n/b)))
+
+
+For divide and conquer algorithms: T(N) = aT(N/b) + f(n)
+
+Case 1: f(n) = O(n^(logb(a)-e)), e>0, then T(n) = Θ(n^logb(a))
+Case 2: f(n) = Θ(n^logb(a)*log^k(n)), k>=0, then T(n) = Θ(n^logb(a)*log^(k+1)(n))
+Case 3: f(n) = Ω(n^(logb(a)+e)), e>0, then T(n) = Θ(f(n))
+Additional condition for Case 3
