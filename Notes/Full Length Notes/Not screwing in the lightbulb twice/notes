@@ -1,0 +1,31 @@
+Dynamic Programming
+Dynamic Programming (DP) 
+is a technique for solving complex problems by breaking them down into simpler subproblems and solving each subproblem once,
+storing the solutions in a table for later use. It is useful when a problem has overlapping subproblems and exhibits optimal 
+substructure.
+
+Fibonacci Sequence Example
+The Fibonacci sequence is example of a problem that can be solved using dynamic programming. The recursive approach has an exponential time complexity of O(2^n), but by using memoization or tabulation, the time complexity can be reduced to O(n).
+Recursive Approach (Exponential Time Complexity)
+pythonCopy codedef fib_recursive(n):
+    if n <= 1:
+        return n
+    return fib_recursive(n - 1) + fib_recursive(n - 2)
+Memoization Approach (Linear Time Complexity)
+pythonCopy codedef fib_memoized(n, memo={}):
+    if n in memo:
+        return memo[n]
+    if n <= 1:
+        result = n
+    else:
+        result = fib_memoized(n - 1, memo) + fib_memoized(n - 2, memo)
+    memo[n] = result
+    return result
+Tabulation Approach (Linear Time Complexity)
+pythonCopy codedef fib_tabulated(n):
+    if n <= 1:
+        return n
+    fib = [0, 1]
+    for i in range(2, n + 1):
+        fib.append(fib[i - 1] + fib[i - 2])
+    return fib[n]
