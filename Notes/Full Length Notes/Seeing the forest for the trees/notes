@@ -1,0 +1,50 @@
+Trees
+A tree is a non-linear data structure that simulates a hierarchical tree structure, with a root node and subtrees of children nodes represented as a set of linked nodes. Trees are widely used in computer science and have various applications, including file systems, databases, and compilers.
+Tree Terminologies
+
+Root Node: The topmost node in the tree.
+Child Node: A node that is directly connected to another node when moving away from the root.
+Parent Node: A node that has one or more child nodes.
+Leaf Node: A node that has no child nodes.
+Sibling Nodes: Nodes that share the same parent node.
+Depth: The number of edges from the root node to a specific node.
+Height: The number of edges in the longest path from the root node to a leaf node.
+
+Types of Trees
+
+Binary Tree: A tree where each node has at most two children, typically referred to as the left child and the right child.
+Binary Search Tree (BST): A binary tree in which the value of each node is greater than or equal to the values in its left subtree and less than or equal to the values in its right subtree.
+Balanced BST: A BST where the heights of the left and right subtrees of every node differ by at most one.
+Red-Black Tree: A self-balancing BST where each node has an additional bit representing its color (red or black), conforming to specific rules that ensure the tree remains balanced.
+
+Tree Operations
+1. Traversal
+Traversal is the process of visiting each node in a tree. There are different ways to traverse a tree, including:
+
+Depth-First Traversal:
+
+In-order (Left, Node, Right)
+Pre-order (Node, Left, Right)
+Post-order (Left, Right, Node)
+
+
+Breadth-First Traversal (Level-order): Visit all nodes at the current level before moving to the next level.
+
+2. Insertion
+In a BST, insertion involves finding the appropriate location to insert the new node while maintaining the BST property. This is typically done by traversing the tree and comparing the new value with the node values until the correct position is found.
+3. Deletion
+Deletion in a BST involves finding the node with the value to be deleted and removing it, then restructuring the tree to maintain the BST property. Depending on the number of children the deleted node has, different strategies are employed, such as replacing the node with its in-order successor or redistributing its children among other nodes.
+Skewed Trees and Balancing
+In the worst case, a BST can become skewed (resembling a linked list), where all nodes are either left or right children. This leads to O(n) time complexity for operations that should ideally be O(log n).
+To prevent skewed trees and maintain balanced trees with O(log n) time complexity, techniques like rotations and self-balancing algorithms (such as Red-Black Trees) are used. These techniques involve rearranging the nodes to maintain a balanced tree structure.
+Red-Black Trees
+Red-Black Trees are self-balancing BSTs that guarantee O(log n) time complexity for operations by maintaining specific rules:
+
+Every node is either red or black.
+The root is black.
+All leaf nodes are black (represented by NULL).
+If a node is red, both its children must be black.
+For every node, all paths from the node to its descendant leaf nodes contain the same number of black nodes.
+
+These rules ensure that the longest path from the root to any leaf node is no more than twice as long as the shortest path, effectively keeping the tree balanced.
+Insertions and deletions in Red-Black Trees involve performing standard BST operations and then rebalancing the tree by recoloring nodes and performing rotations as needed to maintain the Red-Black Tree properties.
