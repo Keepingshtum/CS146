@@ -1,0 +1,61 @@
+Create a distance table and initialize all distances to infinity (except for the source node, which is 0).
+
+Copy codeNode: 1 2 3 4 5 6 7 8
+Dist: 0 ∞ ∞ ∞ ∞ ∞ ∞ ∞
+
+Create a set to track visited nodes, initially empty.
+Select the unvisited node with the minimum distance from the source (initially node 1).
+For the selected node, update the distances of its unvisited neighbors if the calculated distance is shorter than the currently stored value.
+Mark the selected node as visited and move it to the visited set.
+If all nodes have been visited, finish. Otherwise, go to step 3.
+
+steps:
+
+Select node 1 (dist = 0), and update distances of its neighbors:
+
+Copy codeNode: 1 2 3 5
+Dist: 0 3 ∞ ∞
+Visited: {1}
+
+Select node 2 (dist = 3), and update distances of its unvisited neighbors:
+
+Copy codeNode: 1 2 3 4 5 6
+Dist: 0 3 6 ∞ ∞ 5
+Visited: {1, 2}
+
+Select node 6 (dist = 5), and update distances of its unvisited neighbors:
+
+Copy codeNode: 1 2 3 4 5 6 7 8
+Dist: 0 3 6 ∞ 6 5 9 ∞
+Visited: {1, 2, 6}
+
+Select node 5 (dist = 6), no updates needed.
+Select node 3 (dist = 6), and update distances of its unvisited neighbors:
+
+Copy codeNode: 1 2 3 4 5 6 7 8
+Dist: 0 3 6 ∞ 6 5 9 ∞
+Visited: {1, 2, 6, 5, 3}
+
+Select node 7 (dist = 9), no updates needed.
+Select node 4 (dist = ∞), and update its distance:
+
+Copy codeNode: 1 2 3 4 5 6 7 8
+Dist: 0 3 6 8 6 5 9 ∞
+Visited: {1, 2, 6, 5, 3, 7, 4}
+
+Select node 8 (dist = ∞), and update its distance:
+
+Copy codeNode: 1 2 3 4 5 6 7 8
+Dist: 0 3 6 8 6 5 9 13
+Visited: {1, 2, 6, 5, 3, 7, 4, 8}
+Since all nodes have been visited, we're done. The shortest paths from node 1 to all other nodes are:
+
+1 -> 2 (dist = 3)
+1 -> 3 (dist = 6)
+1 -> 4 (dist = 8)
+1 -> 5 (dist = 6)
+1 -> 6 (dist = 5)
+1 -> 7 (dist = 9)
+1 -> 8 (dist = 13)
+
+Dijkstra's algorithm guarantees the shortest path because it explores all possible paths in order of increasing distance from the source node, and it never revisits a node once its shortest distance has been determined.
