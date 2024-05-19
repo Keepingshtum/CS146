@@ -1,0 +1,19 @@
+isValidBST(root)
+    // chekc current node and its children
+    if root is not null
+        // return false if left child is greater
+        // or if right descendant is greater
+        if root.left is not null
+            if root.val < root.left.val
+                return false
+            if root.left.right is not null and root.val < root.left.right.val
+                return false
+        // return false if right child is smaller
+        // or if left descendant is smaller
+        if root.right is not null
+            if root.val > root.right.val
+                return false
+            if root.right.left is not null and root.val > root.right.left.val
+                return false
+        return isValidBST(root.left) and isValidBST(root.right)
+    return true
