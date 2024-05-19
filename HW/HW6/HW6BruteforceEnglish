@@ -1,0 +1,7 @@
+Iterate: Go through each number in the list.
+Select: Pick the current number and the next two numbers.
+Calculate: Add the three numbers.
+Zero Sum?: If the sum is zero, record the triplet, avoiding duplicates.
+Next: If you've checked all combinations from the current position, move one position forward and repeat steps 2-5.
+Continue: Repeat steps 1-6 until you've considered all starting positions.
+Finish: The recorded triplets are your answer.
