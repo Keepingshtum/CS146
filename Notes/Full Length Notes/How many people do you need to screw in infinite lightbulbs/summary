@@ -1,0 +1,17 @@
+Notes
+
+Growth of Functions
+
+Visualizing growth rates of different math functions: y=x (linear), y=x^2 (quadratic), y=x^3 (cubic)
+Example functions and analyzing their growth rates:
+sumArray with one loop: Linear O(n) growth
+Nested loops: Quadratic O(n^2) growth
+Multiple separate loops: Still linear O(n) growth
+Loop where i grows exponentially (i=i*2): Logarithmic O(log n) growth
+Loop where i grows faster than exponential: O(sqrt(n)) growth
+Each additional nested loop increases the order of growth by a factor of n
+But multiple separate loops don't necessarily increase order of growth
+Analyzing Growth Rates
+Break down function into components
+Count number of times each component executes, express as polynomial
+Identify highest degree term to get overall order of growth
