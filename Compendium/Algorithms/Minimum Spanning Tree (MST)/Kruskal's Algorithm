@@ -1,1 +1,13 @@
+## Disclaimer
+This relies on your knowledge of the MST problem and some intuition. If you're not sure you are 100% on that you can check out the proper file in this folder. 
 
+## Kruskal's Process
+Kruskal's essentially relies of picking least cost edges that connect new nodes until you have connected all of them. It goes a little like this: 
+
+1. Pick the minimum weight edge and add it to our MST tree soln.
+2. Do this again and again, ignoring it if it connected two nodes that already exist in our MST tree soln
+3. When you have collected all nodes to the MST, you can terminate the loop and your MST is done.
+
+This is implemented using a disjoint set and uses union-find. 
+
+The time complexity of this is **O(ElogE)**.
