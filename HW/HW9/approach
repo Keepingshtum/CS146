@@ -1,0 +1,49 @@
+In a BST, for any two nodes, their Lowest Common Ancestor is the node that is the lowest (i.e., deepest) in the tree and is an ancestor of both nodes. An ancestor of a node is any node that lies on the path from the root to that node, including the node itself.
+The main idea behind finding the LCA in a BST is to leverage the property of BSTs: for any node, all the nodes in its left subtree have values smaller than the node's value, and all the nodes in its right subtree have values greater than the node's value.
+Here's the code that implements this concept:
+ In Python
+def lowestCommonAncestor(root, p, q):
+    if root.val > p.val and root.val > q.val:
+        return lowestCommonAncestor(root.left, p, q)
+    elif root.val < p.val and root.val < q.val:
+        return lowestCommonAncestor(root.right, p, q)
+    else:
+        return root
+Let's break it down:
+We start at the root of the BST and compare the values of the nodes p and q with the root's value.
+If both p and q have values smaller than the root, we know that the LCA must be in the left subtree of the root. So, we recursively call the function on the left child of the root.
+If both p and q have values greater than the root, we know that the LCA must be in the right subtree of the root. So, we recursively call the function on the right child of the root.
+If neither of the above conditions is true, it means one node has a value smaller than or equal to the root, and the other node has a value greater than or equal to the root. In this case, the root itself is the LCA, so we return the root.
+
+
+
+
+In Java
+public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+    if (root == null) return null;
+    
+    if (root.val > p.val && root.val > q.val)
+        return lowestCommonAncestor(root.left, p, q);
+    else if (root.val < p.val && root.val < q.val)
+        return lowestCommonAncestor(root.right, p, q);
+    else
+        return root;
+}
+Let's break it down:
+We start at the root of the BST. If the root is null, we return null since there is no LCA.
+We compare the values of nodes p and q with the current root's value.
+If both p and q have values smaller than the root, the LCA must be in the left subtree. We recursively call the function on root.left.
+If both p and q have values larger than the root, the LCA must be in the right subtree. We recursively call the function on root.right.
+If neither of the above conditions is true, it means one node has a value smaller than or equal to the root, and the other node has a value larger than or equal to the root. In this case, the current root is the LCA, so we return it.
+We keep applying these steps recursively until we find the LCA.
+
+Here's an example to illustrate the concept:
+     4
+    /   \
+   2     6
+  / \   / \
+ 1   3 5   7
+If we want to find the LCA of nodes with values 1 and 3, we start at the root (4). Since both 1 and 3 are smaller than 4, we move to the left subtree. Now, the root is 2. We find that 1 is smaller than 2 and 3 is greater than 2. This means 2 is the LCA of 1 and 3, so we return 2.
+The recursive nature of the function allows us to traverse the BST and narrow down the search space based on the values of p and q until we find the LCA.
+If we didn't use this approach and tried to find the LCA manually, we would need to traverse the tree and keep track of the paths from the root to the nodes p and q. Then, we would compare the paths and find the last common node. This approach would be more 
+complex and less efficient compared to the recursive solution.
