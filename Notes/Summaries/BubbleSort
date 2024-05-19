@@ -1,0 +1,39 @@
+Bubble Sort
+
+Avg : Big O(n^2)
+
+
+[2] [8] [5] [3] [9] [4] [1] 
+     ↑ ∪ ↑                                      
+
+[2] [5] [8] [3] [9] [4] [1] 
+         ↑ ∪ ↑
+       
+[2] [5] [3] [8] [9] [4] [1] 
+            ↑   ↑
+
+[2] [5] [3] [8] [9] [4] [1] 
+                 ↑   ↑
+
+[2] [5] [3] [8] [4] [9] [1] 
+                     ↑   ↑
+
+[2] [5] [3] [8] [4] [1] [9]
+    
+
+BubbleSort(array)
+    n = length(array)    
+    for i from 0 to n-1
+        swapped = false        
+        for j from 0 to n-i-2
+            if array[j] > array[j+1]
+                swap(array[j], array[j+1])
+                swapped = true        
+        if not swapped
+            break           
+    return array
+swap(a, b)
+    temp = a
+    a = b
+    b = temp
+
